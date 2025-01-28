@@ -1,5 +1,11 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
-  return <h1 className="text-2xl">Hello World</h1>;
+  return (
+    <>
+      <header className="container mx-auto">
+        <Navbar />
+      </header>
+    </>
+  );
 }
