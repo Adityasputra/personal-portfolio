@@ -49,7 +49,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex gap-10">
+        <div className="hidden lg:flex flex-1 justify-center gap-8">
           {[
             { href: "/", label: "Home" },
             { href: "/about", label: "About" },
@@ -78,7 +78,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-[80%] shadow-lg rounded-md bg-red-100">
+        <div className="absolute z-10 left-1/2 transform -translate-x-1/2 w-[80%] shadow-lg rounded-md bg-red-100">
           <div className="flex flex-col items-center gap-4 py-4">
             {[
               { href: "/", label: "Home" },
