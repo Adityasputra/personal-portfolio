@@ -6,7 +6,7 @@
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "",
     "appUrl": "",
-    "imageUrl": "/Suisei-pv.jpeg"
+    "imageUrl": "/images/dummy.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "",
     "appUrl": "",
-    "imageUrl": "/Suisei-pv.jpeg",
+    "imageUrl": "/images/dummy.jpg",
     "star": true
   },
   {
@@ -75,9 +75,9 @@
       "Axios",
       "AWS"
     ],
-    "repoUrl": "",
+    "repoUrl": "https://github.com/Graduation-Team-SBY",
     "appUrl": "",
-    "imageUrl": "/Suisei-pv.jpeg",
+    "imageUrl": "/images/dummy.jpg",
     "star": true
   },
   {
@@ -87,7 +87,7 @@
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "",
     "appUrl": "",
-    "imageUrl": "/Suisei-pv.jpeg",
+    "imageUrl": "/images/dummy.jpg",
     "star": true
   }
 ]

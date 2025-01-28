@@ -1,8 +1,12 @@
 import Navbar from "@/components/Navbar";
 import TechSection from "@/components/ui/TechSection";
 import Image from "next/image";
+import data from "../data/projects.json";
+import Card from "@/components/ui/Card";
 
 export default function Home() {
+  const filteredData = data.filter((project) => project.star === true);
+
   return (
     <>
       <header className="container mx-auto lg:absolute top-0 left-0 right-0 z-10">
@@ -86,6 +90,23 @@ export default function Home() {
               }}
             />
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="text-[#0e1224] p-10 mx-5 lg:mx-20">
+          <h2 className="text-4xl lg:text-5xl">Projects</h2>
+          <h1 className="text-5xl lg:text-6xl mt-4">Featured Projects</h1>
+          <p className="mt-6">
+            Here are some of my featured projects that I have worked on. These
+            projects are built with modern technologies and best practices.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-10 mx-5 lg:mx-20">
+          {filteredData.map((project) => (
+            <Card key={project.id} project={project} />
+          ))}
         </div>
       </section>
     </>
