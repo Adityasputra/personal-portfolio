@@ -53,7 +53,7 @@ export default function Navbar() {
           {[
             { href: "/", label: "Home" },
             { href: "/about", label: "About" },
-            { href: "/project", label: "Project" },
+            { href: "/projects", label: "Project" },
             { href: "/experience", label: "Experience" },
             { href: "/blog", label: "Blog" },
           ].map(({ href, label }) => (
@@ -83,7 +83,7 @@ export default function Navbar() {
             {[
               { href: "/", label: "Home" },
               { href: "/about", label: "About" },
-              { href: "/project", label: "Project" },
+              { href: "/projects", label: "Project" },
               { href: "/experience", label: "Experience" },
               { href: "/blog", label: "Blog" },
             ].map(({ href, label }) => (
