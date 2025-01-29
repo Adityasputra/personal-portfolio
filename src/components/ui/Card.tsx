@@ -25,7 +25,7 @@ export default function Card({ project }: CardProps) {
           alt={`Image of ${project.name}`}
           layout="fill"
           objectFit="cover"
-          objectPosition="top"
+          objectPosition="center"
           className="rounded-t-lg"
         />
       </div>

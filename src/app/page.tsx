@@ -1,8 +1,11 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import TechSection from "@/components/ui/TechSection";
 import Image from "next/image";
 import data from "../data/projects.json";
 import Card from "@/components/ui/Card";
+import { motion } from "framer-motion";
 
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -18,7 +21,12 @@ export default function Home() {
 
       <main className="container mx-auto min-h-screen flex flex-col lg:flex-row items-center gap-8 mt-8">
         {/* Left Section */}
-        <div className="lg:w-1/2 flex flex-col items-center text-center gap-4 px-4 lg:items-start lg:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="lg:w-1/2 flex flex-col items-center text-center gap-4 px-4 lg:items-start lg:text-left"
+        >
           <h1 className="text-3xl lg:text-6xl font-bold text-[#FEB143]">
             Building the Future with Code
           </h1>
@@ -29,10 +37,15 @@ export default function Home() {
           <p className="text-sm italic font-light text-gray-600">
             @Adityasputra
           </p>
-        </div>
+        </motion.div>
 
         {/* Right Section */}
-        <div className="lg:w-1/2 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="lg:w-1/2 flex justify-center"
+        >
           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
             <Image
               src="/images/Avatar.jpeg"
@@ -42,7 +55,7 @@ export default function Home() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </main>
 
       <section className="bg-[#0e1224] py-4 min-h-screen w-full mx-auto">
@@ -89,7 +102,7 @@ export default function Home() {
             <TechSection
               techSection={{
                 title: "Cloud & DevOps",
-                technologies: ["AWS", "Docker", "Git/Github"],
+                technologies: ["AWS", "Docker"],
               }}
             />
           </div>
@@ -114,7 +127,7 @@ export default function Home() {
 
         <div className="text-center pb-10">
           <Link
-            href="/projects"
+            href="/project"
             className="inline-block mx-5 lg:mx-20 py-2 px-4 rounded-md text-[#F8F7F3] bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-[#FEB143] hover:from-[#FEB143] hover:to-[#FEB143] transition-colors duration-300 ease-in-out"
           >
             See More
