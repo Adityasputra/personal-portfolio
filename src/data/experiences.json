@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "SMK YPM 3 Taman - Multimedia",
+        "institution": "SMK YPM 3 Taman Sidoarjo",
+        "description":
+          "Mulai belajar programming dasar dan tertarik dengan dunia web development.",
+        "date": "2019 - 2022",
+        "icon": "learning"
+      },
+      {
+        "id": 2,
+        "title": "Full Stack JavaScript Immersive Bootcamp",
+        "institution": "Hacktiv8 Indonesia",
+        "description":
+          "Mendalami JavaScript, React, Express, dan database. Mengerjakan proyek nyata dan belajar best practices dalam pengembangan aplikasi.",
+        "date": "2023",
+        "icon": "course"
+      }
+]
