@@ -9,7 +9,9 @@ import Footer from "@/components/Footer";
 export default function ProjectsPage() {
   return (
     <>
-      <Navbar />
+      <header className="container mx-auto">
+        <Navbar />
+      </header>
       <div className="container mx-auto px-6 py-12">
         {/* Header */}
         <motion.div

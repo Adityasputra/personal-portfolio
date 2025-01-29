@@ -17,7 +17,7 @@ interface CardProps {
 
 export default function Card({ project }: CardProps) {
   return (
-    <div className="flex flex-col bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
+    <div className="flex flex-col md:h-full lg:h-full bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
       {/* Image Section */}
       <div className="relative w-full h-64">
         <Image
