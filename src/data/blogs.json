@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Belajar Next.js dari Nol",
+    "slug": "belajar-nextjs",
+    "date": "2024-01-15",
+    "excerpt": "Panduan lengkap untuk memahami dasar-dasar Next.js dan bagaimana menggunakannya dalam proyek.",
+    "image": "/images/nextjs-guide.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Mengoptimalkan SEO di Next.js",
+    "slug": "seo-nextjs",
+    "date": "2024-02-10",
+    "excerpt": "Tips dan trik meningkatkan peringkat SEO di website berbasis Next.js.",
+    "image": "/images/seo-nextjs.jpg"
+  },
+  {
+    "id": 3,
+    "title": "TypeScript untuk Developer React",
+    "slug": "typescript-react",
+    "date": "2024-03-05",
+    "excerpt": "Pelajari cara menggunakan TypeScript dalam proyek React untuk meningkatkan maintainability.",
+    "image": "/images/typescript-react.jpg"
+  }
+]
