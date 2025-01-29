@@ -52,7 +52,6 @@ export default function Navbar() {
         <div className="hidden lg:flex flex-1 justify-center gap-8">
           {[
             { href: "/", label: "Home" },
-            { href: "/about", label: "About" },
             { href: "/projects", label: "Project" },
             { href: "/experience", label: "Experience" },
             { href: "/blog", label: "Blog" },
@@ -82,7 +81,6 @@ export default function Navbar() {
           <div className="flex flex-col items-center gap-4 py-4">
             {[
               { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
               { href: "/projects", label: "Project" },
               { href: "/experience", label: "Experience" },
               { href: "/blog", label: "Blog" },

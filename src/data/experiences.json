@@ -1,20 +1,20 @@
 [
     {
         "id": 1,
-        "title": "SMK YPM 3 Taman - Multimedia",
+        "title": "Vocational High School - Multimedia",
         "institution": "SMK YPM 3 Taman Sidoarjo",
         "description":
-          "Mulai belajar programming dasar dan tertarik dengan dunia web development.",
-        "date": "2019 - 2022",
+          "Started learning basic programming and got interested in web development.",
+        "date": "2021 - 2024",
         "icon": "learning"
       },
       {
         "id": 2,
-        "title": "Full Stack JavaScript Immersive Bootcamp",
+        "title": "Bootcamp - Full Stack JavaScript Immersive",
         "institution": "Hacktiv8 Indonesia",
         "description":
-          "Mendalami JavaScript, React, Express, dan database. Mengerjakan proyek nyata dan belajar best practices dalam pengembangan aplikasi.",
-        "date": "2023",
+          "Explore JavaScript, React, Express, and databases. Work on real projects and learn best practices in application development.",
+        "date": "2024",
         "icon": "course"
       }
 ]
