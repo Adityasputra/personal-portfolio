@@ -23,7 +23,9 @@ export default function BlogDetailPage() {
 
   return (
     <>
-      <Navbar />
+      <header className="container mx-auto">
+        <Navbar />
+      </header>
       <div className="container mx-auto min-h-screen px-6 py-12 max-w-4xl">
         <div className="w-full h-64 rounded-lg overflow-hidden shadow-md">
           <Image

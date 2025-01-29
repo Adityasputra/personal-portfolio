@@ -35,7 +35,6 @@ export default function BlogPage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              {/* Gambar harus memiliki ukuran tetap */}
               <Image
                 src={blog.image}
                 alt={blog.title}
@@ -44,7 +43,6 @@ export default function BlogPage() {
                 className="w-full h-48 object-cover"
               />
 
-              {/* Flex-grow agar konten menyesuaikan tinggi */}
               <div className="p-6 flex flex-col flex-grow">
                 <p className="text-sm text-gray-500">{blog.date}</p>
                 <h3 className="text-xl font-semibold text-gray-800 mt-2">
