@@ -10,7 +10,9 @@ import blogs from "../../data/blogs.json";
 export default function BlogPage() {
   return (
     <>
-      <Navbar />
+      <header className="container mx-auto">
+        <Navbar />
+      </header>
       <div className="container mx-auto min-h-screen px-6 py-12">
         {/* Header */}
         <motion.div
