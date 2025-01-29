@@ -28,13 +28,14 @@ export default function BlogPage() {
           {blogs.map((blog, index) => (
             <motion.div
               key={blog.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
+              {/* Gambar harus memiliki ukuran tetap */}
               <Image
                 src={blog.image}
                 alt={blog.title}
@@ -43,18 +44,19 @@ export default function BlogPage() {
                 className="w-full h-48 object-cover"
               />
 
-              <div className="p-6">
+              {/* Flex-grow agar konten menyesuaikan tinggi */}
+              <div className="p-6 flex flex-col flex-grow">
                 <p className="text-sm text-gray-500">{blog.date}</p>
                 <h3 className="text-xl font-semibold text-gray-800 mt-2">
                   {blog.title}
                 </h3>
-                <p className="mt-2 text-gray-600">{blog.excerpt}</p>
+                <p className="mt-2 text-gray-600 flex-grow">{blog.excerpt}</p>
 
                 <Link
                   href={`/blog/${blog.slug}`}
                   className="inline-block mt-4 text-yellow-600 font-medium hover:underline"
                 >
-                  Baca Selengkapnya →
+                  Read More &rarr;
                 </Link>
               </div>
             </motion.div>

@@ -3,16 +3,16 @@
     "id": 1,
     "title": "Belajar Next.js dari Nol",
     "slug": "belajar-nextjs",
-    "date": "2024-01-15",
+    "date": "2025-01-15",
     "excerpt": "Panduan lengkap untuk memahami dasar-dasar Next.js dan bagaimana menggunakannya dalam proyek.",
-    "image": "/images/dummy.jpg",
+    "image": "/images/hero.webp",
     "content": "Next.js adalah framework React yang powerful dan banyak digunakan untuk membangun aplikasi web modern. Dengan fitur seperti rendering sisi server (SSR), static site generation (SSG), dan API Routes, Next.js memberikan solusi lengkap untuk performa dan fleksibilitas. Artikel ini akan membahas langkah-langkah dasar untuk memulai dengan Next.js, termasuk cara menginstalnya, struktur proyek, dan beberapa konsep utama yang perlu diketahui oleh developer pemula."
   },
   {
     "id": 2,
     "title": "Mengoptimalkan SEO di Next.js",
     "slug": "seo-nextjs",
-    "date": "2024-02-10",
+    "date": "2025-01-10",
     "excerpt": "Tips dan trik meningkatkan peringkat SEO di website berbasis Next.js.",
     "image": "/images/dummy.jpg",
     "content": "SEO (Search Engine Optimization) adalah aspek penting dalam pengembangan web untuk memastikan website mendapatkan peringkat yang baik di mesin pencari seperti Google. Next.js menyediakan berbagai fitur untuk meningkatkan SEO, seperti penggunaan `next/head` untuk meta tags, server-side rendering (SSR) untuk konten yang lebih SEO-friendly, serta dynamic routing yang memungkinkan struktur URL lebih bersih. Dalam artikel ini, kita akan membahas beberapa teknik optimasi SEO yang bisa diterapkan dalam proyek Next.js."
@@ -21,7 +21,7 @@
     "id": 3,
     "title": "TypeScript untuk Developer React",
     "slug": "typescript-react",
-    "date": "2024-03-05",
+    "date": "2025-01-05",
     "excerpt": "Pelajari cara menggunakan TypeScript dalam proyek React untuk meningkatkan maintainability.",
     "image": "/images/dummy.jpg",
     "content": "TypeScript adalah superset dari JavaScript yang menambahkan static typing, membantu developer menulis kode yang lebih aman dan mudah dikelola. Dalam proyek React, penggunaan TypeScript bisa membantu dalam pembuatan komponen yang lebih terstruktur, dengan type checking yang kuat untuk props dan state. Artikel ini akan menjelaskan dasar-dasar penggunaan TypeScript dalam React, termasuk bagaimana mendefinisikan tipe untuk props, hooks, dan penggunaan interface dalam aplikasi React."

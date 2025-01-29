@@ -77,7 +77,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute z-10 left-1/2 transform -translate-x-1/2 w-[80%] shadow-lg rounded-md bg-red-100">
+        <div className="absolute z-10 left-1/2 transform -translate-x-1/2 w-[80%] shadow-lg rounded-md bg-gray-100">
           <div className="flex flex-col items-center gap-4 py-4">
             {[
               { href: "/", label: "Home" },
