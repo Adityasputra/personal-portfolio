@@ -10,7 +10,9 @@ import data from "../../data/experiences.json";
 export default function ExperiencePage() {
   return (
     <>
-      <Navbar />
+      <header className="container mx-auto">
+        <Navbar />
+      </header>
       <div className="container mx-auto min-h-screen px-6 py-12">
         {/* Header */}
         <div className="text-center mb-12">
