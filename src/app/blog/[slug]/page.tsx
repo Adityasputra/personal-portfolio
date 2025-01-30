@@ -22,6 +22,8 @@ export default function BlogDetailPage() {
     );
   }
 
+  const imageUrl = blog.image.startsWith("/") ? blog.image : `/${blog.image}`;
+
   return (
     <>
       <NextSeo
@@ -30,17 +32,15 @@ export default function BlogDetailPage() {
         openGraph={{
           title: blog.title,
           description: blog.excerpt,
-          url: `https://fc28-114-5-223-237.ngrok-free.app/blog/${blog.slug}`,
+          url: `https://www.adityasputra.my.id/blog/${blog.slug}`,
           type: "article",
           article: {
             publishedTime: blog.date,
-            authors: ["https://fc28-114-5-223-237.ngrok-free.app"],
+            authors: ["https://www.adityasputra.my.id/"],
           },
           images: [
             {
-              url: `https://fc28-114-5-223-237.ngrok-free.app${
-                blog.image || "/images/display.jpeg"
-              }`,
+              url: `https://www.adityasputra.my.id${imageUrl}`,
               width: 1200,
               height: 630,
               alt: blog.title,
@@ -54,7 +54,7 @@ export default function BlogDetailPage() {
       <div className="container mx-auto min-h-screen px-6 py-12 max-w-4xl">
         <div className="w-full h-64 rounded-lg overflow-hidden shadow-md">
           <Image
-            src={blog.image}
+            src={imageUrl}
             alt={blog.title}
             width={800}
             height={400}
@@ -66,7 +66,7 @@ export default function BlogDetailPage() {
         <h1 className="text-4xl font-bold text-gray-800 mt-6">{blog.title}</h1>
         <div className="flex items-center text-gray-500 text-sm mt-2">
           <FaCalendarAlt className="mr-2 text-[#FEB143]" />
-          <span>{blog.date}</span>
+          <span>{new Date(blog.date).toLocaleDateString()}</span>
         </div>
 
         <article className="mt-6 text-gray-700 leading-relaxed text-lg">

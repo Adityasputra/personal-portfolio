@@ -9,7 +9,7 @@ export default function SEOWrapper({
 }) {
   return (
     <>
-      {/* <SEOProvider /> */}
+      <SEOProvider />
       {children}
     </>
   );

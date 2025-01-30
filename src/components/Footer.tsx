@@ -2,9 +2,9 @@ import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0e1224] text-[#F8F7F3] text-center py-6">
+    <footer className="bg-[#1A1A1A] text-[#F8F7F3] text-center py-6">
       <p className="text-sm">
-        &copy; {new Date().getFullYear()} Aditya Saputra. All Rights Reserved.
+        &copy; {new Date().getFullYear()} Aditya Saputra.
       </p>
       <div className="flex justify-center items-center gap-x-4 mt-4">
         <a
