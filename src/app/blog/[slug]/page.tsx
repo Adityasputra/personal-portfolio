@@ -30,15 +30,17 @@ export default function BlogDetailPage() {
         openGraph={{
           title: blog.title,
           description: blog.excerpt,
-          url: `https://2b61-114-5-223-237.ngrok-free.app/blog/${blog.slug}`,
+          url: `https://fc28-114-5-223-237.ngrok-free.app/blog/${blog.slug}`,
           type: "article",
           article: {
             publishedTime: blog.date,
-            authors: ["https://2b61-114-5-223-237.ngrok-free.app/about"],
+            authors: ["https://fc28-114-5-223-237.ngrok-free.app"],
           },
           images: [
             {
-              url: `https://2b61-114-5-223-237.ngrok-free.app${blog.image}`,
+              url: `https://fc28-114-5-223-237.ngrok-free.app${
+                blog.image || "/images/display.jpeg"
+              }`,
               width: 1200,
               height: 630,
               alt: blog.title,

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SEOProvider from "@/components/SEOProvider";
+import SEOWrapper from "@/components/SEOWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Aditya Saputra | Developer Portfolio",
     description: "Explore recent experiences, projects and posts.",
     type: "website",
-    url: "https://2b61-114-5-223-237.ngrok-free.app",
+    url: "https://fc28-114-5-223-237.ngrok-free.app",
   },
 };
 
@@ -48,8 +48,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="antialiased">
-        <SEOProvider />
-        {children}
+        <SEOWrapper>{children}</SEOWrapper>
       </body>
     </html>
   );
