@@ -50,9 +50,10 @@ export default function Home() {
             <Image
               src="/images/Avatar.jpeg"
               alt="Aditya Saputra's Avatar Profile"
-              layout="fill"
-              objectFit="cover"
+              width={400}
+              height={400}
               priority
+              className="object-center object-cover"
             />
           </div>
         </motion.div>

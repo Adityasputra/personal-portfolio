@@ -23,10 +23,10 @@ export default function Card({ project }: CardProps) {
         <Image
           src={project.imageUrl}
           alt={`Image of ${project.name}`}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          className="rounded-t-lg"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="rounded-t-lg object-cover object-center"
         />
       </div>
 
