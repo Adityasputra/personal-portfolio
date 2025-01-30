@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Saputra | Developer Portfolio",
+  title: "Aditya Saputra | Software Engineer",
   description:
     "Official portfolio of Aditya Saputra, a full stack javascript developer.",
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Aditya Saputra", url: "https://github.com/Adityasputra" }],
   openGraph: {
-    title: "Aditya Saputra | Developer Portfolio",
+    title: "Aditya Saputra | Software Engineer",
     description: "Explore recent experiences, projects and posts.",
     type: "website",
     url: "https://www.adityasputra.my.id/",
