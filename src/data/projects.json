@@ -3,10 +3,18 @@
     "id": 1,
     "name": "Personal Portfolio",
     "description": "Personal Portfolio is a modern website designed to showcase my experience, projects and skills. With a clean design and intuitive navigation, the site helps create a strong first impression with recruiters and collaborators.",
-    "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
     "repoUrl": "",
     "appUrl": "",
-    "imageUrl": "/images/dummy.jpg"
+    "imageUrl": "/images/dummy.jpg",
+    "star": true
   },
   {
     "id": 2,
@@ -33,7 +41,7 @@
     ],
     "repoUrl": "https://github.com/Adityasputra/lumina-app",
     "appUrl": "",
-    "imageUrl": "/Suisei-pv.jpeg"
+    "imageUrl": "/images/dummy.jpg"
   },
   {
     "id": 4,
@@ -50,7 +58,7 @@
     ],
     "repoUrl": "https://github.com/Adityasputra/delizioso-cms",
     "appUrl": "",
-    "imageUrl": "/Suisei-pv.jpeg"
+    "imageUrl": "/images/dummy.jpg"
   },
   {
     "id": 5,
@@ -87,7 +95,6 @@
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "",
     "appUrl": "",
-    "imageUrl": "/images/dummy.jpg",
-    "star": true
+    "imageUrl": "/images/dummy.jpg"
   }
 ]

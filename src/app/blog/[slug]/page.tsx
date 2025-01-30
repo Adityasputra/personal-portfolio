@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import blogs from "../../../data/blogs.json";
 import { FaCalendarAlt } from "react-icons/fa";
+import { NextSeo } from "next-seo";
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -23,6 +24,28 @@ export default function BlogDetailPage() {
 
   return (
     <>
+      <NextSeo
+        title={`${blog.title} | Blog Aditya`}
+        description={blog.excerpt}
+        openGraph={{
+          title: blog.title,
+          description: blog.excerpt,
+          url: `https://2b61-114-5-223-237.ngrok-free.app/blog/${blog.slug}`,
+          type: "article",
+          article: {
+            publishedTime: blog.date,
+            authors: ["https://2b61-114-5-223-237.ngrok-free.app/about"],
+          },
+          images: [
+            {
+              url: `https://2b61-114-5-223-237.ngrok-free.app${blog.image}`,
+              width: 1200,
+              height: 630,
+              alt: blog.title,
+            },
+          ],
+        }}
+      />
       <header className="container mx-auto">
         <Navbar />
       </header>

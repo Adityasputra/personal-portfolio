@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SEOProvider from "@/components/SEOProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     title: "Aditya Saputra | Developer Portfolio",
     description: "Explore recent experiences, projects and posts.",
     type: "website",
-    // url: "https://website.com",
+    url: "https://2b61-114-5-223-237.ngrok-free.app",
     images: [
       {
         url: "/images/display.jpeg",
@@ -49,8 +50,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="antialiased">{children}</body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
+      <body className="antialiased">
+        <SEOProvider />
+        {children}
+      </body>
     </html>
   );
 }
