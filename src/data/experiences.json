@@ -1,18 +1,18 @@
 [
   {
     "id": 1,
-    "title": "Vocational High School - Multimedia",
-    "institution": "SMK YPM 3 Taman Sidoarjo",
-    "description": "Learned basic programming and developed an interest in web development.",
-    "date": "2021 - 2024",
-    "icon": "learning"
-  },
-  {
-    "id": 2,
     "title": "Bootcamp - Full Stack JavaScript",
     "institution": "Hacktiv8 Indonesia",
     "description": "Studied JavaScript, React, Express, and databases. Built real-world projects and learned industry best practices.",
     "date": "2024",
     "icon": "course"
+  },
+  {
+    "id": 2,
+    "title": "Vocational High School - Multimedia",
+    "institution": "SMK YPM 3 Taman Sidoarjo",
+    "description": "Learned basic programming and developed an interest in web development.",
+    "date": "2021 - 2024",
+    "icon": "learning"
   }
 ]
