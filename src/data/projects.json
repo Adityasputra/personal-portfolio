@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Personal Portfolio",
-    "description": "Personal Portfolio is a modern website designed to showcase my experience, projects and skills. With a clean design and intuitive navigation, the site helps create a strong first impression with recruiters and collaborators.",
+    "description": "A modern website designed to showcase my experience, projects, and skills. With a clean design and intuitive navigation, the site helps create a strong first impression with recruiters and collaborators.",
     "technologies": [
       "TypeScript",
       "Node.js",
@@ -11,59 +11,61 @@
       "Tailwind CSS",
       "Framer Motion"
     ],
-    "repoUrl": "",
-    "appUrl": "",
-    "imageUrl": "/images/dummy.jpg",
+    "repoUrl": "https://github.com/Adityasputra/personal-portfolio",
+    "appUrl": "https://www.adityasputra.my.id/",
+    "imageUrl": "/images/personal-portfolio.jpg",
     "star": true
   },
   {
     "id": 2,
     "name": "CoinFusion",
-    "description": "CoinFusion is an innovative platform designed to track and plan your cryptocurrency investments. With AI-powered features, CoinFusion helps you stay ahead in the market by providing personalized insights and trading strategies. Whether you're a beginner or an experienced trader, CoinFusion has something for you.",
+    "description": "An innovative platform for tracking and planning cryptocurrency investments. With AI-powered features, it provides personalized insights and trading strategies for both beginners and experienced traders.",
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
-    "repoUrl": "",
-    "appUrl": "",
+    "repoUrl": "https://github.com/Adityasputra/coinfusion-server",
+    "appUrl": null,
     "imageUrl": "/images/dummy.jpg",
     "star": true
   },
   {
     "id": 3,
     "name": "Lumina",
-    "description": "Lumina is a next-generation social media platform designed to foster connections and interactions. With a sleek and modern interface, Lumina empowers users to share stories and stay connected with people. Lumina offers a seamless and engaging social experience.",
+    "description": "A next-generation social media platform designed to foster connections and interactions. With a sleek interface, Lumina empowers users to share stories and stay connected effortlessly.",
     "technologies": [
       "React Native",
       "CSS",
       "Expo",
       "Apollo",
       "GraphQL",
-      "Mongodb",
+      "MongoDB",
       "Redis"
     ],
     "repoUrl": "https://github.com/Adityasputra/lumina-app",
-    "appUrl": "",
-    "imageUrl": "/images/dummy.jpg"
+    "appUrl": null,
+    "imageUrl": "/images/dummy.jpg",
+    "star": false
   },
   {
     "id": 4,
     "name": "Delizioso",
-    "description": "Delizioso is a food content management system specializing in Italian cuisine. With a clean and user-friendly interface, Delizioso provides an exceptional experience for managing dishes and presenting them to users effectively.",
+    "description": "A food content management system specializing in Italian cuisine. With a user-friendly interface, it provides an exceptional experience for managing and showcasing dishes.",
     "technologies": [
-      "NodeJs",
-      "ExpressJs",
+      "Node.js",
+      "Express.js",
       "Sequelize",
-      "PostgreSql",
+      "PostgreSQL",
       "Vite",
       "React",
       "Tailwind CSS"
     ],
     "repoUrl": "https://github.com/Adityasputra/delizioso-cms",
-    "appUrl": "",
-    "imageUrl": "/images/dummy.jpg"
+    "appUrl": null,
+    "imageUrl": "/images/dummy.jpg",
+    "star": false
   },
   {
     "id": 5,
     "name": "YangTu",
-    "description": "YangTu is a service platform that enables users to order home cleaning and shopping delivery services in a single app. Users can choose to be Jalu (service requester) or Yusa (task performer). This app provides flexibility and convenience for both parties, creating an efficient and user-friendly experience for daily needs.",
+    "description": "A service platform that enables users to order home cleaning and shopping delivery services in a single app. Users can be Jalu (requester) or Yusa (task performer), creating an efficient and flexible experience.",
     "technologies": [
       "React",
       "React Native",
@@ -71,11 +73,11 @@
       "Redux",
       "Socket.io",
       "DaisyUI",
-      "NodeJs",
+      "Node.js",
       "TypeScript",
       "JavaScript",
-      "ExpressJs",
-      "Mongodb",
+      "Express.js",
+      "MongoDB",
       "Mongoose",
       "Midtrans",
       "Google Maps API",
@@ -84,17 +86,18 @@
       "AWS"
     ],
     "repoUrl": "https://github.com/Graduation-Team-SBY",
-    "appUrl": "",
+    "appUrl": null,
     "imageUrl": "/images/dummy.jpg",
     "star": true
   },
   {
     "id": 6,
     "name": "GameVers",
-    "description": "GameVers is a digital game store featuring the latest and most popular games. With a modern interface, GameVers provides the best experience for gamers to find their favorite games.",
+    "description": "A digital game store featuring the latest and most popular games. With a modern interface, GameVers provides an optimal experience for gamers to explore their favorite titles.",
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
-    "repoUrl": "",
-    "appUrl": "",
-    "imageUrl": "/images/dummy.jpg"
+    "repoUrl": "https://github.com/Adityasputra/gameversehub-ecommerce",
+    "appUrl": null,
+    "imageUrl": "/images/dummy.jpg",
+    "star": false
   }
 ]
