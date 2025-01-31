@@ -5,10 +5,11 @@ interface Project {
   id: number;
   name: string;
   description: string;
-  repoUrl: string;
-  appUrl: string;
+  repoUrl?: string | null;
+  appUrl?: string | null;
   imageUrl: string;
   technologies: string[];
+  star: boolean;
 }
 
 interface CardProps {
