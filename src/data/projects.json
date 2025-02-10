@@ -47,7 +47,7 @@
   {
     "id": 4,
     "name": "Delizioso",
-    "description": "A food content management system specializing in Italian cuisine. With a user-friendly interface, it provides an exceptional experience for managing and showcasing dishes.",
+    "description": "Delizioso is an innovative culinary data management platform designed to streamline food data organization and enhance user experience. Whether you're a restaurant staff member managing menu items or a food enthusiast exploring delightful cuisines, Delizioso provides a seamless solution",
     "technologies": [
       "Node.js",
       "Express.js",
