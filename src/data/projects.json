@@ -24,7 +24,7 @@
     "repoUrl": "https://github.com/Adityasputra/coinfusion-server",
     "appUrl": null,
     "imageUrl": "/images/dummy.jpg",
-    "star": true
+    "star": false
   },
   {
     "id": 3,
@@ -57,10 +57,10 @@
       "React",
       "Tailwind CSS"
     ],
-    "repoUrl": "https://github.com/Adityasputra/delizioso-cms",
+    "repoUrl": "https://github.com/Adityasputra/delizioso",
     "appUrl": null,
     "imageUrl": "/images/dummy.jpg",
-    "star": false
+    "star": true
   },
   {
     "id": 5,
