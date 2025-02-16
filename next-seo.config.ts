@@ -1,33 +1,41 @@
 import { NextSeoProps } from "next-seo";
 
+const siteName = "Aditya Saputra";
+const baseUrl = "https://www.adityasputra.my.id";
+const description =
+  "Official portfolio of Aditya Saputra, a full-stack developer.";
+
 const SEO: NextSeoProps = {
-  title: "Aditya Saputra | Developer Portfolio",
-  titleTemplate: "%s | Aditya Saputra",
-  description:
-    "Official portfolio of Aditya Saputra, a full stack javascript developer.",
+  title: `${siteName} | Full-Stack Developer`,
+  titleTemplate: "%s | Developer Portfolio",
+  description,
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://www.adityasputra.my.id/",
-    title: "Aditya Saputra | Developer Portfolio",
-    description: "Explore recent experiences, projects and posts.",
+    url: baseUrl,
+    title: `${siteName} | Full-Stack Developer`,
+    description,
     images: [
       {
-        url: "https://www.adityasputra.my.id/images/display.jpeg",
+        url: `${baseUrl}/images/display.webp`,
         width: 1200,
         height: 630,
-        alt: "Aditya Saputra Portfolio",
+        alt: `${siteName} Portfolio`,
       },
     ],
-    site_name: "Aditya Saputra",
+    site_name: siteName,
   },
   additionalMetaTags: [
     {
       name: "keywords",
-      content: "portfolio, developer, full stack, javascript, Aditya Saputra",
+      content: "portfolio, developer, full-stack, javascript, aditya saputra",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
     },
   ],
-  defaultTitle: "Aditya Saputra",
+  defaultTitle: siteName,
 };
 
 export default SEO;
