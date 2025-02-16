@@ -52,9 +52,9 @@ export default function Navbar() {
         <div className="hidden lg:flex flex-1 justify-center gap-8">
           {[
             { href: "/", label: "Home" },
-            { href: "/project", label: "Project" },
-            { href: "/experience", label: "Experience" },
-            { href: "/blog", label: "Blog" },
+            { href: "/projects", label: "Projects" },
+            { href: "/experiences", label: "Experiences" },
+            { href: "/blogs", label: "Blogs" },
           ].map(({ href, label }) => (
             <Link
               key={href}
@@ -81,9 +81,9 @@ export default function Navbar() {
           <div className="flex flex-col items-center gap-4 py-4">
             {[
               { href: "/", label: "Home" },
-              { href: "/project", label: "Project" },
-              { href: "/experience", label: "Experience" },
-              { href: "/blog", label: "Blog" },
+              { href: "/projects", label: "Projects" },
+              { href: "/experiences", label: "Experiences" },
+              { href: "/blogs", label: "Blogs" },
             ].map(({ href, label }) => (
               <Link
                 key={href}
