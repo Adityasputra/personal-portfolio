@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Metadata } from "next";
+import ClientSeo from "@/components/ClientSeo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,35 +14,21 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Aditya Saputra | Software Engineer",
-  description:
-    "Official portfolio of Aditya Saputra, a full stack javascript developer.",
-  keywords: [
-    "Next.js",
-    "React",
-    "Frontend Developer",
-    "Full Stack Javascript Developer",
-    "Backend Developer",
-    "Portfolio",
-  ],
-  authors: [{ name: "Aditya Saputra", url: "https://github.com/Adityasputra" }],
-  openGraph: {
-    title: "Aditya Saputra | Software Engineer",
-    description: "Explore recent experiences, projects and posts.",
-    type: "website",
-    url: "https://www.adityasputra.my.id/",
-  },
-};
-
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <ClientSeo />
+        {children}
+      </body>
     </html>
   );
 }
