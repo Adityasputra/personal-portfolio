@@ -7,7 +7,7 @@ interface Project {
   description: string;
   repoUrl?: string | null;
   appUrl?: string | null;
-  imageUrl: string;
+  imageUrl?: string | null;
   technologies: string[];
   star: boolean;
 }
@@ -22,7 +22,7 @@ export default function Card({ project }: CardProps) {
       {/* Image Section */}
       <div className="relative w-full h-64">
         <Image
-          src={project.imageUrl}
+          src={project.imageUrl || "/images/dummy.webp"}
           alt={`Image of ${project.name}`}
           fill
           priority
