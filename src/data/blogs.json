@@ -14,7 +14,7 @@
     "slug": "seo-nextjs",
     "date": "2025-01-10",
     "excerpt": "Tips dan trik meningkatkan peringkat SEO di website berbasis Next.js.",
-    "image": "/images/dummy.jpg",
+    "image": null,
     "content": "SEO (Search Engine Optimization) adalah aspek penting dalam pengembangan web untuk memastikan website mendapatkan peringkat yang baik di mesin pencari seperti Google. Next.js menyediakan berbagai fitur untuk meningkatkan SEO, seperti penggunaan `next/head` untuk meta tags, server-side rendering (SSR) untuk konten yang lebih SEO-friendly, serta dynamic routing yang memungkinkan struktur URL lebih bersih. Dalam artikel ini, kita akan membahas beberapa teknik optimasi SEO yang bisa diterapkan dalam proyek Next.js."
   },
   {
@@ -23,7 +23,7 @@
     "slug": "typescript-react",
     "date": "2025-01-05",
     "excerpt": "Pelajari cara menggunakan TypeScript dalam proyek React untuk meningkatkan maintainability.",
-    "image": "/images/dummy.jpg",
+    "image": null,
     "content": "TypeScript adalah superset dari JavaScript yang menambahkan static typing, membantu developer menulis kode yang lebih aman dan mudah dikelola. Dalam proyek React, penggunaan TypeScript bisa membantu dalam pembuatan komponen yang lebih terstruktur, dengan type checking yang kuat untuk props dan state. Artikel ini akan menjelaskan dasar-dasar penggunaan TypeScript dalam React, termasuk bagaimana mendefinisikan tipe untuk props, hooks, dan penggunaan interface dalam aplikasi React."
   }
 ]

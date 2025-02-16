@@ -13,7 +13,7 @@
     ],
     "repoUrl": "https://github.com/Adityasputra/personal-portfolio",
     "appUrl": "https://www.adityasputra.my.id/",
-    "imageUrl": "/images/personal-portfolio.jpg",
+    "imageUrl": "/images/personal-portfolio.webp",
     "star": true
   },
   {
@@ -23,7 +23,7 @@
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "https://github.com/Adityasputra/coinfusion-server",
     "appUrl": null,
-    "imageUrl": "/images/dummy.jpg",
+    "imageUrl": null,
     "star": false
   },
   {
@@ -41,7 +41,7 @@
     ],
     "repoUrl": "https://github.com/Adityasputra/lumina-app",
     "appUrl": null,
-    "imageUrl": "/images/dummy.jpg",
+    "imageUrl": null,
     "star": false
   },
   {
@@ -59,7 +59,7 @@
     ],
     "repoUrl": "https://github.com/Adityasputra/delizioso",
     "appUrl": null,
-    "imageUrl": "/images/dummy.jpg",
+    "imageUrl": null,
     "star": true
   },
   {
@@ -87,7 +87,7 @@
     ],
     "repoUrl": "https://github.com/Graduation-Team-SBY",
     "appUrl": null,
-    "imageUrl": "/images/dummy.jpg",
+    "imageUrl": null,
     "star": true
   },
   {
@@ -97,7 +97,7 @@
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "https://github.com/Adityasputra/gameversehub-ecommerce",
     "appUrl": null,
-    "imageUrl": "/images/dummy.jpg",
+    "imageUrl": null,
     "star": false
   }
 ]
