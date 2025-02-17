@@ -106,7 +106,7 @@ const BlogCard = ({ blog, index }: { blog: Blog; index: number }) => (
       <h3 className="text-xl font-semibold text-gray-800 mt-2">{blog.title}</h3>
       <p className="mt-2 text-gray-600 flex-grow">{blog.excerpt}</p>
       <Link
-        href={`/blog/${blog.slug}`}
+        href={`/blogs/${blog.slug}`}
         className="inline-block mt-4 text-yellow-600 font-medium hover:underline"
       >
         Read More &rarr;
