@@ -1,3 +1,5 @@
+import React from "react";
+
 interface TechSection {
   title: string;
   technologies: string[];
@@ -7,7 +9,7 @@ interface TechSectionProps {
   techSection: TechSection;
 }
 
-export default function TechSection({ techSection }: TechSectionProps) {
+const TechSection = React.memo(({ techSection }: TechSectionProps) => {
   return (
     <div>
       <p className="font-semibold">{techSection.title}</p>
@@ -23,4 +25,6 @@ export default function TechSection({ techSection }: TechSectionProps) {
       </div>
     </div>
   );
-}
+});
+
+export default TechSection;
