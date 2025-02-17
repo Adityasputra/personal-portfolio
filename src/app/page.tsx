@@ -1,17 +1,54 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import TechSection from "@/components/ui/TechSection";
 import Image from "next/image";
-import data from "../data/projects.json";
-import Card from "@/components/ui/Card";
 import { motion } from "framer-motion";
-
 import Link from "next/link";
-import Footer from "@/components/Footer";
+import useSWR from "swr";
+import { Project } from "@/types";
 
-export default function Home() {
-  const filteredData = data.filter((project) => project.star === true);
+import TechSection from "@/components/ui/TechSection";
+import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
+
+const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
+const Card = dynamic(() => import("@/components/ui/Card"), { ssr: false });
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+export default function HomePage() {
+  const {
+    data: projects = [],
+    error,
+    isLoading,
+  } = useSWR<Project[]>("/api/projects", fetcher, {
+    revalidateOnFocus: false,
+    shouldRetryOnError: true,
+  });
+
+  if (error)
+    return <p className="text-red-500 text-center">Failed to load projects.</p>;
+
+  const filteredData = (projects ?? []).filter((project) => project.star);
+
+  const techSections = [
+    { title: "Language", technologies: ["Javascript", "Typescript", "Go"] },
+    {
+      title: "Frontend & Mobile",
+      technologies: [
+        "React",
+        "NextJs",
+        "Tailwind",
+        "Redux",
+        "Vite",
+        "React Native",
+      ],
+    },
+    {
+      title: "Backend & Database",
+      technologies: ["ExpressJs", "NodeJs", "PostgreSQL", "MongoDB"],
+    },
+    { title: "Cloud & DevOps", technologies: ["AWS", "Docker"] },
+  ];
 
   return (
     <>
@@ -48,11 +85,12 @@ export default function Home() {
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
             <Image
-              src="/images/Avatar.jpeg"
+              src="/images/avatar.webp"
               alt="Aditya Saputra's Avatar Profile"
               width={400}
               height={400}
-              priority
+              priority={false}
+              loading="lazy"
               className="object-center object-cover"
             />
           </div>
@@ -75,37 +113,9 @@ export default function Home() {
         <div className="text-[#F8F7F3] p-10 mx-5 lg:mx-20">
           <h2 className="text-xl lg:text-2xl">Technology that I use:</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
-            <TechSection
-              techSection={{
-                title: "Language",
-                technologies: ["Javascript", "Typescript", "Go"],
-              }}
-            />
-            <TechSection
-              techSection={{
-                title: "Frontend & Mobile",
-                technologies: [
-                  "React",
-                  "NextJs",
-                  "Tailwind",
-                  "Redux",
-                  "Vite",
-                  "React Native",
-                ],
-              }}
-            />
-            <TechSection
-              techSection={{
-                title: "Backend & Database",
-                technologies: ["ExpressJs", "NodeJs", "PostgreSQL", "MongoDB"],
-              }}
-            />
-            <TechSection
-              techSection={{
-                title: "Cloud & DevOps",
-                technologies: ["AWS", "Docker"],
-              }}
-            />
+            {techSections.map((section) => (
+              <TechSection key={section.title} techSection={section} />
+            ))}
           </div>
         </div>
       </section>
@@ -120,11 +130,29 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 lg:p-10 mx-5 lg:mx-20">
-          {filteredData.map((project) => (
-            <Card key={project.id} project={project} />
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 lg:p-10 mx-5 lg:mx-20">
+            {[...Array(3)].map((_, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md h-64 animate-pulse"
+                initial={{ opacity: 0.5, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.6,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 lg:p-10 mx-5 lg:mx-20">
+            {filteredData.map((project) => (
+              <Card key={project.id} project={project} />
+            ))}
+          </div>
+        )}
 
         <div className="text-center pb-10">
           <Link
