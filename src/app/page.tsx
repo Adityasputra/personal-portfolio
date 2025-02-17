@@ -4,14 +4,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import useSWR from "swr";
-import { Project } from "@/types";
-
-import TechSection from "@/components/ui/TechSection";
-import Footer from "@/components/Footer";
 import dynamic from "next/dynamic";
+
+import { Project } from "@/types";
+import TechSection from "@/components/ui/TechSection";
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 const Card = dynamic(() => import("@/components/ui/Card"), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
