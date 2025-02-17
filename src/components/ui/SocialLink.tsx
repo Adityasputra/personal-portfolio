@@ -1,34 +1,41 @@
+import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 
-interface SocialLinks {
-  githubUrl?: string | null;
-  websiteUrl?: string | null;
-}
-
 interface SocialLinksProps {
-  project: SocialLinks;
+  project: {
+    repoUrl?: string;
+    appUrl?: string;
+  };
 }
 
-export default function SocialLinks({ project }: SocialLinksProps) {
+const SocialLinks = React.memo(({ project }: SocialLinksProps) => {
   return (
-    <div>
-      <div className="flex gap-2">
-        {project.githubUrl && (
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-            <FaGithub size={24} />
-          </a>
-        )}
-        {project.websiteUrl && (
-          <a
-            href={project.websiteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <CgWebsite size={24} />
-          </a>
-        )}
-      </div>
+    <div className="flex gap-2">
+      {project.repoUrl && (
+        <a
+          href={project.repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Repository"
+          className="hover:scale-110 transition-transform duration-200"
+        >
+          <FaGithub size={24} />
+        </a>
+      )}
+      {project.appUrl && (
+        <a
+          href={project.appUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Live Website"
+          className="hover:scale-110 transition-transform duration-200"
+        >
+          <CgWebsite size={24} />
+        </a>
+      )}
     </div>
   );
-}
+});
+
+export default SocialLinks;
