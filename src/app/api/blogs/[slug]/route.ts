@@ -8,8 +8,6 @@ export async function GET(
   const { slug } = params;
   const blog = blogs.find((b) => b.slug === slug);
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
   if (!blog) {
     return NextResponse.json({ message: "Blog not found" }, { status: 404 });
   }
