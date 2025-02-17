@@ -1,7 +1,9 @@
 "use client";
 
 import { formatDate } from "@/lib/dateFormated";
-import { AlignJustify, Sparkles } from "lucide-react";
+import { HiOutlineSparkles } from "react-icons/hi2";
+import { FiAlignJustify } from "react-icons/fi";
+
 import { Great_Vibes } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -45,7 +47,7 @@ export default function Navbar() {
           }`}
           onClick={toggleMenu}
         >
-          <AlignJustify />
+          <FiAlignJustify />
         </button>
 
         {/* Desktop Menu */}
@@ -70,7 +72,10 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-2">
           <span className="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
             {formatDate(new Date())}
-            <Sparkles strokeWidth={1.5} className="h-5 w-5 text-[#FEB143]" />
+            <HiOutlineSparkles
+              strokeWidth={1.5}
+              className="h-5 w-5 text-[#FEB143]"
+            />
           </span>
         </div>
       </nav>
