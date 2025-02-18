@@ -4,6 +4,6 @@ export interface Blog {
   slug: string;
   date: string;
   excerpt: string;
-  image: string;
+  image: string | null;
   content: string;
 }
