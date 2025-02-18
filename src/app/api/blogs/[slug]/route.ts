@@ -1,12 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import blogs from "@/data/blogs.json";
+import { Blog } from "@/types";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { slug: string } }
-) {
-  const { slug } = params;
-  const blog = blogs.find((b) => b.slug === slug);
+export function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const slug = searchParams.get("slug");
+
+  if (!slug) {
+    return NextResponse.json({ message: "Slug is required" }, { status: 400 });
+  }
+
+  const blog: Blog | undefined = blogs.find((b) => b.slug === slug);
 
   if (!blog) {
     return NextResponse.json({ message: "Blog not found" }, { status: 404 });
