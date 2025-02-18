@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 const siteName = "Aditya Saputra";
 const baseUrl = "https://www.adityasputra.my.id";
 const description =
-  "Aditya Saputra adalah seorang full-stack developer dengan keahlian dalam Next.js, React, dan teknologi modern lainnya. Temukan proyek, pengalaman, dan artikel terbaru di sini.";
+  "Official portfolio of Aditya Saputra, a full-stack developer.";
 const keywords = [
   "Aditya Saputra",
   "Full-Stack Developer",
@@ -30,7 +30,7 @@ const keywords = [
 ];
 
 export const metadata: Metadata = {
-  title: `${siteName} | Full-Stack Developer & Web Enthusiast`,
+  title: `${siteName} | Full-Stack Developer`,
   description: description,
   keywords: keywords,
   authors: [{ name: siteName, url: baseUrl }],
