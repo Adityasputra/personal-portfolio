@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ClientSeo from "@/components/ClientSeo";
+import ClientSeoWrapper from "@/components/ClientSeoWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,13 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="antialiased">
-        <ClientSeo />
+        <ClientSeoWrapper />
         {children}
       </body>
     </html>
