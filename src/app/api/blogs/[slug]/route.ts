@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import blogs from "@/data/blogs.json";
 
-export async function GET(
-  request: NextRequest,
-  context: { params?: { slug?: string } }
-) {
-  const slug = context.params?.slug;
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const slug = searchParams.get("slug");
 
   if (!slug) {
     return NextResponse.json({ message: "Missing slug" }, { status: 400 });
