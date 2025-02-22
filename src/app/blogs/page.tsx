@@ -20,18 +20,16 @@ export default function BlogPage() {
   } = useSWR<Blog[]>("/api/blogs", fetcher, {
     revalidateOnFocus: false,
     shouldRetryOnError: true,
-    fallbackData: [], // Default data on initial load
+    fallbackData: [],
   });
-
-  if (error) throw new Error("Failed to load blogs");
 
   return (
     <>
       <header className="container mx-auto">
         <Navbar />
       </header>
+
       <div className="container mx-auto min-h-screen px-6 py-12">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,8 +40,9 @@ export default function BlogPage() {
           <p className="mt-2 text-gray-600">Latest articles & tutorials.</p>
         </motion.div>
 
-        {/* State Handling */}
-        {isLoading ? (
+        {error ? (
+          <ErrorMessage />
+        ) : isLoading ? (
           <BlogSkeleton />
         ) : blogs.length > 0 ? (
           <BlogGrid blogs={blogs} />
@@ -51,12 +50,18 @@ export default function BlogPage() {
           <NoBlogs />
         )}
       </div>
+
       <Footer />
     </>
   );
 }
 
-/* Skeleton Loading */
+const ErrorMessage = () => (
+  <p className="text-center text-red-500 font-semibold">
+    Failed to load blogs. Please try again later.
+  </p>
+);
+
 const BlogSkeleton = () => (
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     {[...Array(6)].map((_, index) => (
@@ -68,7 +73,6 @@ const BlogSkeleton = () => (
   </div>
 );
 
-/* Component to display blog list */
 const BlogGrid = ({ blogs }: { blogs: Blog[] }) => (
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     {blogs.map((blog, index) => (
@@ -77,40 +81,43 @@ const BlogGrid = ({ blogs }: { blogs: Blog[] }) => (
   </div>
 );
 
-/* If no blogs are available */
 const NoBlogs = () => (
   <p className="text-center text-gray-500">No blogs found.</p>
 );
 
-/* Blog Card Component */
-const BlogCard = ({ blog, index }: { blog: Blog; index: number }) => (
-  <motion.div
-    className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: index * 0.1, duration: 0.5 }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.98 }}
-  >
-    <Image
-      src={blog.image || "/images/dummy.webp"}
-      alt={blog.title}
-      width={500}
-      height={300}
-      className="w-full h-48 object-cover"
-      // priority={index < 3}
-      loading="lazy" // Lazy load images
-    />
-    <div className="p-6 flex flex-col flex-grow">
-      <p className="text-sm text-gray-500">{blog.date}</p>
-      <h3 className="text-xl font-semibold text-gray-800 mt-2">{blog.title}</h3>
-      <p className="mt-2 text-gray-600 flex-grow">{blog.excerpt}</p>
-      <Link
-        href={`/blogs/${blog.slug}`}
-        className="inline-block mt-4 text-yellow-600 font-medium hover:underline"
+const BlogCard = ({ blog, index }: { blog: Blog; index: number }) => {
+  console.log(blog);
+  return (
+    <Link href={`/blogs/${blog.slug}`} passHref>
+      <motion.div
+        className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1, duration: 0.5 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.98 }}
       >
-        Read More &rarr;
-      </Link>
-    </div>
-  </motion.div>
-);
+        <Image
+          src={blog.image || "/images/dummy.webp"}
+          alt={blog.title}
+          width={500}
+          height={300}
+          className="w-full h-48 object-cover"
+          loading="lazy"
+        />
+        <div className="p-6 flex flex-col flex-grow">
+          <p className="text-sm text-gray-500">
+            {new Date(blog.date).toLocaleDateString()}
+          </p>
+          <h3 className="text-xl font-semibold text-gray-800 mt-2">
+            {blog.title}
+          </h3>
+          <p className="mt-2 text-gray-600 flex-grow">{blog.excerpt}</p>
+          <span className="inline-block mt-4 text-yellow-600 font-medium hover:underline">
+            Read More &rarr;
+          </span>
+        </div>
+      </motion.div>
+    </Link>
+  );
+};
