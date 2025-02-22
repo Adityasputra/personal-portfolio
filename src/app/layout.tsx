@@ -55,9 +55,10 @@ export const metadata: Metadata = {
     locale: "id_ID",
     type: "website",
   },
-  // verification: {
-  //   google: "",
-  // },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
