@@ -89,8 +89,8 @@ export default function HomePage() {
               alt="Aditya Saputra's Avatar Profile"
               width={400}
               height={400}
-              priority={false}
-              loading="lazy"
+              priority
+              // loading="lazy"
               className="object-center object-cover"
             />
           </div>

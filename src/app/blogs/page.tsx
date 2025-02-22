@@ -103,7 +103,8 @@ const BlogCard = ({ blog, index }: { blog: Blog; index: number }) => {
           width={500}
           height={300}
           className="w-full h-48 object-cover"
-          loading="lazy"
+          // loading="lazy"
+          priority
         />
         <div className="p-6 flex flex-col flex-grow">
           <p className="text-sm text-gray-500">
