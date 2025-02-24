@@ -18,7 +18,7 @@ export default function BlogDetailPage() {
     data: blog,
     error,
     isLoading,
-  } = useSWR(slug ? `/api/blogs/${slug}` : null, fetcher);
+  } = useSWR(`/api/blogs?slug=${slug}`, fetcher);
 
   if (isLoading) {
     return (
