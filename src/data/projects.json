@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Personal Portfolio",
     "description": "A modern website designed to showcase my experience, projects, and skills. With a clean design and intuitive navigation, the site helps create a strong first impression with recruiters and collaborators.",
+    "shortDescription": "A personal portfolio showcasing my work and skills.",
     "technologies": [
       "TypeScript",
       "Node.js",
@@ -14,22 +15,28 @@
     "repoUrl": "https://github.com/Adityasputra/personal-portfolio",
     "appUrl": "https://www.adityasputra.my.id/",
     "imageUrl": "/images/personal-portfolio.webp",
-    "star": true
+    "images": [],
+    "featured": true,
+    "status": "completed"
   },
   {
     "id": 2,
     "name": "CoinFusion",
     "description": "An innovative platform for tracking and planning cryptocurrency investments. With AI-powered features, it provides personalized insights and trading strategies for both beginners and experienced traders.",
+    "shortDescription": "Crypto investment tracker with AI insights.",
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "https://github.com/Adityasputra/coinfusion-server",
     "appUrl": null,
     "imageUrl": null,
-    "star": false
+    "images": [],
+    "featured": false,
+    "status": "ongoing"
   },
   {
     "id": 3,
     "name": "Lumina",
     "description": "A next-generation social media platform designed to foster connections and interactions. With a sleek interface, Lumina empowers users to share stories and stay connected effortlessly.",
+    "shortDescription": "Next-gen social media for seamless connections.",
     "technologies": [
       "React Native",
       "CSS",
@@ -42,12 +49,15 @@
     "repoUrl": "https://github.com/Adityasputra/lumina-app",
     "appUrl": null,
     "imageUrl": null,
-    "star": false
+    "images": [],
+    "featured": false,
+    "status": "paused"
   },
   {
     "id": 4,
     "name": "Delizioso",
-    "description": "Delizioso is an innovative culinary data management platform designed to streamline food data organization and enhance user experience. Whether you're a restaurant staff member managing menu items or a food enthusiast exploring delightful cuisines, Delizioso provides a seamless solution",
+    "description": "Delizioso is an innovative culinary data management platform designed to streamline food data organization and enhance user experience. Whether you're a restaurant staff member managing menu items or a food enthusiast exploring delightful cuisines, Delizioso provides a seamless solution.",
+    "shortDescription": "Culinary data management platform for restaurants and food lovers.",
     "technologies": [
       "Node.js",
       "Express.js",
@@ -60,12 +70,15 @@
     "repoUrl": "https://github.com/Adityasputra/delizioso",
     "appUrl": null,
     "imageUrl": null,
-    "star": true
+    "images": [],
+    "featured": true,
+    "status": "completed"
   },
   {
     "id": 5,
     "name": "YangTu",
     "description": "A service platform that enables users to order home cleaning and shopping delivery services in a single app. Users can be Jalu (requester) or Yusa (task performer), creating an efficient and flexible experience.",
+    "shortDescription": "Home services and delivery platform.",
     "technologies": [
       "React",
       "React Native",
@@ -88,16 +101,21 @@
     "repoUrl": "https://github.com/Graduation-Team-SBY",
     "appUrl": null,
     "imageUrl": null,
-    "star": true
+    "images": [],
+    "featured": true,
+    "status": "completed"
   },
   {
     "id": 6,
     "name": "GameVers",
     "description": "A digital game store featuring the latest and most popular games. With a modern interface, GameVers provides an optimal experience for gamers to explore their favorite titles.",
+    "shortDescription": "Digital game store with the latest titles.",
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "https://github.com/Adityasputra/gameversehub-ecommerce",
     "appUrl": null,
     "imageUrl": null,
-    "star": false
+    "images": [],
+    "featured": false,
+    "status": "ongoing"
   }
 ]
