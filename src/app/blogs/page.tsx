@@ -86,9 +86,8 @@ const NoBlogs = () => (
 );
 
 const BlogCard = ({ blog, index }: { blog: Blog; index: number }) => {
-  console.log(blog);
   return (
-    <Link href={`/blogs/${blog.slug}`} passHref>
+    <Link href={`/blogs/${blog.slug}`}>
       <motion.div
         className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer"
         initial={{ opacity: 0, y: 30 }}
