@@ -4,6 +4,7 @@
     "name": "Personal Portfolio",
     "description": "A modern website designed to showcase my experience, projects, and skills. With a clean design and intuitive navigation, the site helps create a strong first impression with recruiters and collaborators.",
     "shortDescription": "A personal portfolio showcasing my work and skills.",
+    "content": "I began by sketching wireframes on paper to outline the structure. Then, I developed the frontend using Next.js and Tailwind CSS for a responsive design. To enhance user experience, I integrated Framer Motion for smooth animations. I also focused on writing clean, maintainable code and deployed the project using Vercel.",
     "technologies": [
       "TypeScript",
       "Node.js",
@@ -15,7 +16,7 @@
     "repoUrl": "https://github.com/Adityasputra/personal-portfolio",
     "appUrl": "https://www.adityasputra.my.id/",
     "imageUrl": "/images/personal-portfolio.webp",
-    "images": [],
+    "images": ["/images/personal-portfolio.webp", "/images/projects-banner.webp"],
     "featured": true,
     "status": "completed"
   },
@@ -24,11 +25,12 @@
     "name": "CoinFusion",
     "description": "An innovative platform for tracking and planning cryptocurrency investments. With AI-powered features, it provides personalized insights and trading strategies for both beginners and experienced traders.",
     "shortDescription": "Crypto investment tracker with AI insights.",
+    "content": "The backend was developed using Node.js and Express, with MongoDB for data storage. The frontend was built using Next.js and Tailwind CSS for a modern look. AI-powered insights were integrated using a Python-based recommendation engine. The API fetches real-time data from CoinGecko.",
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "https://github.com/Adityasputra/coinfusion-server",
     "appUrl": null,
     "imageUrl": null,
-    "images": [],
+    "images": null,
     "featured": false,
     "status": "ongoing"
   },
@@ -37,6 +39,7 @@
     "name": "Lumina",
     "description": "A next-generation social media platform designed to foster connections and interactions. With a sleek interface, Lumina empowers users to share stories and stay connected effortlessly.",
     "shortDescription": "Next-gen social media for seamless connections.",
+    "content": "The project began with user research and UI/UX design. The frontend was built with React Native for cross-platform support. GraphQL with Apollo was used for efficient data fetching. The backend was built with Node.js, and MongoDB was chosen for flexible data storage.",
     "technologies": [
       "React Native",
       "CSS",
@@ -49,7 +52,7 @@
     "repoUrl": "https://github.com/Adityasputra/lumina-app",
     "appUrl": null,
     "imageUrl": null,
-    "images": [],
+    "images": null,
     "featured": false,
     "status": "paused"
   },
@@ -58,6 +61,7 @@
     "name": "Delizioso",
     "description": "Delizioso is an innovative culinary data management platform designed to streamline food data organization and enhance user experience. Whether you're a restaurant staff member managing menu items or a food enthusiast exploring delightful cuisines, Delizioso provides a seamless solution.",
     "shortDescription": "Culinary data management platform for restaurants and food lovers.",
+    "content": "Built with Node.js and Express, using PostgreSQL for relational data storage. The frontend was developed with React and Tailwind CSS. Sequelize was used as the ORM, and the application was designed to handle real-time menu updates efficiently.",
     "technologies": [
       "Node.js",
       "Express.js",
@@ -70,7 +74,7 @@
     "repoUrl": "https://github.com/Adityasputra/delizioso",
     "appUrl": null,
     "imageUrl": null,
-    "images": [],
+    "images": null,
     "featured": true,
     "status": "completed"
   },
@@ -79,6 +83,7 @@
     "name": "YangTu",
     "description": "A service platform that enables users to order home cleaning and shopping delivery services in a single app. Users can be Jalu (requester) or Yusa (task performer), creating an efficient and flexible experience.",
     "shortDescription": "Home services and delivery platform.",
+    "content": "Designed to handle two user roles: Jalu (requester) and Yusa (task performer). Built with React and React Native for cross-platform compatibility. The backend uses Node.js with Express and MongoDB for scalability. Payment integration was implemented using Midtrans.",
     "technologies": [
       "React",
       "React Native",
@@ -101,7 +106,7 @@
     "repoUrl": "https://github.com/Graduation-Team-SBY",
     "appUrl": null,
     "imageUrl": null,
-    "images": [],
+    "images": null,
     "featured": true,
     "status": "completed"
   },
@@ -110,11 +115,12 @@
     "name": "GameVers",
     "description": "A digital game store featuring the latest and most popular games. With a modern interface, GameVers provides an optimal experience for gamers to explore their favorite titles.",
     "shortDescription": "Digital game store with the latest titles.",
+    "content": "Developed using Next.js for server-side rendering and optimal SEO. The backend was built with Node.js and a PostgreSQL database. The UI was designed with Tailwind CSS for a clean and fast user experience.",
     "technologies": ["TypeScript", "Node.js", "Next.js", "Tailwind CSS"],
     "repoUrl": "https://github.com/Adityasputra/gameversehub-ecommerce",
     "appUrl": null,
     "imageUrl": null,
-    "images": [],
+    "images": null,
     "featured": false,
     "status": "ongoing"
   }
