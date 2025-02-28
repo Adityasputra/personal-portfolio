@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,19 +31,17 @@ const keywords = [
 
 export const metadata: Metadata = {
   title: `${siteName} | Full-Stack Developer`,
-  description: description,
-  keywords: keywords,
-  authors: [{ name: siteName, url: baseUrl }],
+  description,
+  keywords,
+  creator: siteName,
   metadataBase: new URL(baseUrl),
   robots: "index, follow",
-  alternates: {
-    canonical: baseUrl,
-  },
+  alternates: { canonical: baseUrl },
   openGraph: {
     title: `${siteName} | Full-Stack Developer`,
-    description: description,
+    description,
     url: baseUrl,
-    siteName: siteName,
+    siteName,
     images: [
       {
         url: `${baseUrl}/images/display.webp`,
@@ -68,11 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content={keywords.join(", ")} />
-      </head>
-
+      <head />
       <body className="antialiased">{children}</body>
     </html>
   );
