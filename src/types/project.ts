@@ -3,10 +3,11 @@ export interface Project {
   name: string;
   description: string;
   shortDescription: string;
-  technologies: string[];
+  content: string;
+  technologies: string[]; 
   repoUrl: string;
   appUrl?: string;
-  imageUrl?: string;
+  imageUrl?: string | null;
   images?: string[];
   featured: boolean;
   status: "ongoing" | "completed" | "paused";
