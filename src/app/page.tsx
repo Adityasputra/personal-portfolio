@@ -75,7 +75,7 @@ export default function HomePage() {
       </main>
 
       <section className="bg-[#1A1A1A] py-4 min-h-screen w-full mx-auto">
-        <div className="text-[#F8F7F3] p-10 mx-5 lg:mx-20">
+        <div className="text-[#F8F7F3] p-4 lg:mx-20">
           <h2 className="text-4xl lg:text-5xl">Hello!</h2>
           <h1 className="text-5xl lg:text-6xl mt-4">I'm Aditya Saputra</h1>
           <p className="mt-6">
@@ -87,7 +87,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="text-[#F8F7F3] p-10 mx-5 lg:mx-20">
+        <div className="text-[#F8F7F3] p-4 lg:mx-20">
           <h2 className="text-xl lg:text-2xl">Technology that I use:</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
             {techSections.map((section) => (
