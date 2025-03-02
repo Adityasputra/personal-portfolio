@@ -4,7 +4,7 @@
     "title": "Belajar Next.js dari Nol",
     "slug": "belajar-nextjs",
     "date": "2025-01-15",
-    "excerpt": "Panduan lengkap untuk memahami dasar-dasar Next.js dan bagaimana menggunakannya dalam proyek.",
+    "excerpt": "Panduan awal lengkap untuk memahami dasar-dasar Next.js dan bagaimana menggunakannya dalam proyek.",
     "image": "/images/hero.webp",
     "content": "Next.js adalah framework React yang powerful dan banyak digunakan untuk membangun aplikasi web modern. Dengan fitur seperti rendering sisi server (SSR), static site generation (SSG), dan API Routes, Next.js memberikan solusi lengkap untuk performa dan fleksibilitas. Artikel ini akan membahas langkah-langkah dasar untuk memulai dengan Next.js, termasuk cara menginstalnya, struktur proyek, dan beberapa konsep utama yang perlu diketahui oleh developer pemula."
   },
