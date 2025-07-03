@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
 import TechSection from "@/components/ui/TechSection";
+import TypographyTest from "@/components/TypographyTest";
+import DarkModeTest from "@/components/DarkmodeTest";
+import ClsxTest from "@/components/ClsxTest";
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
