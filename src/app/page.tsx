@@ -5,9 +5,6 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
 import TechSection from "@/components/ui/TechSection";
-import TypographyTest from "@/components/TypographyTest";
-import DarkModeTest from "@/components/DarkmodeTest";
-import ClsxTest from "@/components/ClsxTest";
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
@@ -80,12 +77,12 @@ export default function HomePage() {
       <section className="bg-[#1A1A1A] py-4 min-h-screen w-full mx-auto">
         <div className="text-[#F8F7F3] p-4 lg:mx-20">
           <h2 className="text-4xl lg:text-5xl">Hello!</h2>
-          <h1 className="text-5xl lg:text-6xl mt-4">I'm Aditya Saputra</h1>
+          <h1 className="text-5xl lg:text-6xl mt-4">I&apos;m Aditya Saputra</h1>
           <p className="mt-6">
-            I'm a technology enthusiast passionate about programming, especially
+            I&apos;m a technology enthusiast passionate about programming, especially
             in web development. My journey began in high school and continued
             through completing the Hacktiv8 bootcamp as a full-stack JavaScript
-            developer. I'm always learning new technologies to stay ahead and
+            developer. I&apos;m always learning new technologies to stay ahead and
             improve my skills.
           </p>
         </div>

@@ -17,7 +17,7 @@ export default function TypographyTest() {
         juga.
       </blockquote>
       <pre>
-        <code>console.log("Hello, World!")</code>
+        <code>console.log(&quot;Hello, World!&quot;)</code>
       </pre>
     </div>
   );

@@ -15,7 +15,6 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 export default function ExperiencePage() {
   const {
     data: experiences = [],
-    error,
     isLoading,
   } = useSWR<Experience[]>("/api/experiences", fetcher, {
     revalidateOnFocus: false,
