@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import TechSection from "@/components/ui/TechSection";
 
-const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
+import { NavigationsMenu } from "@/components/NavigationMenu";
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
 export default function Page1() {
@@ -30,9 +30,7 @@ export default function Page1() {
   ];
   return (
     <>
-      <header className="container mx-auto lg:absolute top-0 left-0 right-0 z-10">
-        <Navbar />
-      </header>
+      <NavigationsMenu />
 
       <main className="container mx-auto min-h-screen flex flex-col lg:flex-row items-center gap-8 mt-8">
         <motion.div
