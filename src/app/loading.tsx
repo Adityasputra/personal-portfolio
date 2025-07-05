@@ -16,43 +16,6 @@ export default function Loading() {
           className="w-20 h-20 border-4 border-yellow-500 border-t-transparent rounded-full"
         />
       </motion.div>
-
-      {/* <p className="mt-4 text-lg font-medium text-gray-700 flex items-center">
-        Loading
-        <span className="ml-1 flex">
-          <motion.span
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
-            className="ml-1"
-          >
-            .
-          </motion.span>
-          <motion.span
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{
-              repeat: Infinity,
-              duration: 1,
-              ease: "easeInOut",
-              delay: 0.2,
-            }}
-            className="ml-1"
-          >
-            .
-          </motion.span>
-          <motion.span
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{
-              repeat: Infinity,
-              duration: 1,
-              ease: "easeInOut",
-              delay: 0.4,
-            }}
-            className="ml-1"
-          >
-            .
-          </motion.span>
-        </span>
-      </p> */}
     </div>
   );
 }
