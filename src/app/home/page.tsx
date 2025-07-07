@@ -6,9 +6,20 @@ import dynamic from "next/dynamic";
 import TechSection from "@/components/ui/TechSection";
 
 import { NavigationsMenu } from "@/components/NavigationMenu";
+import Link from "next/link";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
-export default function Page1() {
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import ExperiencePage from "../experiences/page";
+
+export default function Page() {
   const techSections = [
     { title: "Language", technologies: ["Javascript", "Typescript", "Go"] },
     {
@@ -28,19 +39,25 @@ export default function Page1() {
     },
     { title: "Cloud & DevOps", technologies: ["AWS", "Docker"] },
   ];
+  const quickLinks = [
+    { name: "Blog", href: "/" },
+    { name: "Gallery", href: "/portfolio" },
+    { name: "Project", href: "/blog" },
+  ];
+
   return (
     <>
       <NavigationsMenu />
 
-      <main className="container mx-auto min-h-screen flex flex-col lg:flex-row items-center gap-8 mt-8">
+      <main className="container mx-auto min-h-screen flex flex-col lg:flex-row items-center gap-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="lg:w-1/2 flex flex-col items-center text-center gap-4 px-4 lg:items-start lg:text-left"
         >
-          <h1 className="text-3xl lg:text-6xl font-bold text-[#FEB143]">
-            Building the Future with Code
+          <h1 className="text-3xl lg:text-6xl font-bold">
+            Hi there, I&apos;m Aditya Saputra
           </h1>
           <blockquote className="text-lg font-light leading-relaxed">
             Jadilah kreatif dalam setiap langkah, terus belajar, dan wujudkan
@@ -49,6 +66,8 @@ export default function Page1() {
           <p className="text-sm italic font-light text-gray-600">
             @Adityasputra
           </p>
+
+          <Link href="#"></Link>
         </motion.div>
 
         <motion.div
@@ -70,10 +89,8 @@ export default function Page1() {
         </motion.div>
       </main>
 
-      <section className="bg-[#1A1A1A] py-4 min-h-screen w-full mx-auto">
-        <div className="text-[#F8F7F3] p-4 lg:mx-20">
-          <h2 className="text-4xl lg:text-5xl">Hello!</h2>
-          <h1 className="text-5xl lg:text-6xl mt-4">I&apos;m Aditya Saputra</h1>
+      <section className="bg-gray-900 py-4 min-h-screen w-full mx-auto">
+        <div className="p-4 lg:mx-20">
           <p className="mt-6">
             I&apos;m a technology enthusiast passionate about programming,
             especially in web development. My journey began in high school and
@@ -83,15 +100,28 @@ export default function Page1() {
           </p>
         </div>
 
-        <div className="text-[#F8F7F3] p-4 lg:mx-20">
-          <h2 className="text-xl lg:text-2xl">Technology that I use:</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
-            {techSections.map((section) => (
-              <TechSection key={section.title} techSection={section} />
-            ))}
-          </div>
+        <div className=" p-4 lg:mx-20">
+          <Card>
+            <CardHeader>
+              <CardTitle>Skillset</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {techSections.map((items) => (
+                <div key={items.title} className="space-y-2">
+                  <p className="text-sm font-semibold">{items.title}</p>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {items.technologies.map((tech) => (
+                      <Badge key={tech}>{tech}</Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
         </div>
       </section>
+
+      <ExperiencePage />
 
       <footer>
         <Footer />
