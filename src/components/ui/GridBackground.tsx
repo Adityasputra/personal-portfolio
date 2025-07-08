@@ -28,9 +28,9 @@ export function GridBackground({
         className
       )}
     >
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <Starfield />
-      </div>
+      </div> */}
 
       {/* Grid animasi */}
       <motion.div

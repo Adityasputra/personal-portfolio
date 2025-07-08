@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import SocialLinks from "./SocialLink";
 import { Project } from "@/types";
+import SocialLinks from "./ui/SocialLink";
 
 interface ProjectProps {
   project: Project;
