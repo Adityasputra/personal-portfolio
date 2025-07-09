@@ -18,6 +18,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import ExperiencePage from "../experiences/page";
+import Timeline from "@/components/Timeline";
 
 export default function Page() {
   const techSections = [
@@ -40,9 +41,9 @@ export default function Page() {
     { title: "Cloud & DevOps", technologies: ["AWS", "Docker"] },
   ];
   const quickLinks = [
-    { name: "Blog", href: "/" },
+    { name: "Blog", href: "/blog" },
     { name: "Gallery", href: "/portfolio" },
-    { name: "Project", href: "/blog" },
+    { name: "Projects", href: "/projects" },
   ];
 
   return (
@@ -67,7 +68,12 @@ export default function Page() {
             @Adityasputra
           </p>
 
-          <Link href="#"></Link>
+          <Link
+            href="#contact"
+            className="inline-block mt-4 px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/80 transition"
+          >
+            Let&apos;s Connect
+          </Link>
         </motion.div>
 
         <motion.div
@@ -89,39 +95,85 @@ export default function Page() {
         </motion.div>
       </main>
 
-      <section className="bg-gray-900 py-4 min-h-screen w-full mx-auto">
-        <div className="p-4 lg:mx-20">
-          <p className="mt-6">
-            I&apos;m a technology enthusiast passionate about programming,
-            especially in web development. My journey began in high school and
-            continued through completing the Hacktiv8 bootcamp as a full-stack
-            JavaScript developer. I&apos;m always learning new technologies to
-            stay ahead and improve my skills.
-          </p>
-        </div>
+      {/* Biography Section */}
+      <section className="bg-muted py-12 px-4 md:px-20">
+        <h2 className="text-2xl font-bold mb-4">Biography</h2>
+        <p className="text-muted-foreground text-sm md:text-base">
+          I&apos;m a technology enthusiast passionate about programming,
+          especially in web development. My journey began in high school and
+          continued through completing the Hacktiv8 bootcamp as a full-stack
+          JavaScript developer. I&apos;m always learning new technologies to
+          stay ahead and improve my skills.
+        </p>
+      </section>
 
-        <div className=" p-4 lg:mx-20">
-          <Card>
-            <CardHeader>
-              <CardTitle>Skillset</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {techSections.map((items) => (
-                <div key={items.title} className="space-y-2">
-                  <p className="text-sm font-semibold">{items.title}</p>
-                  <div className="flex flex-wrap gap-2 mt-1">
-                    {items.technologies.map((tech) => (
-                      <Badge key={tech}>{tech}</Badge>
-                    ))}
-                  </div>
+      {/* Skills Section */}
+      <section className="bg-gray-900 py-12 px-4 md:px-20">
+        <Card>
+          <CardHeader>
+            <CardTitle>Skillset & Tools</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {techSections.map((items) => (
+              <div key={items.title} className="space-y-2">
+                <p className="text-sm font-semibold">{items.title}</p>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {items.technologies.map((tech) => (
+                    <Badge key={tech}>{tech}</Badge>
+                  ))}
                 </div>
-              ))}
-            </CardContent>
-          </Card>
-        </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Life Values Section */}
+      <section className="py-12 px-4 md:px-20">
+        <h2 className="text-2xl font-bold mb-4">Values & Life Principles</h2>
+        <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+          <li>Live with integrity and honesty.</li>
+          <li>Never stop learning and sharing.</li>
+          <li>Create impact with intention.</li>
+          <li>Balance logic and creativity.</li>
+        </ul>
       </section>
 
       <ExperiencePage />
+      <Timeline />
+
+      {/* Quick Links Section */}
+      <section className="bg-muted py-12 px-4 md:px-20">
+        <h2 className="text-2xl font-bold mb-6">Quick Links</h2>
+        <div className="flex flex-wrap gap-4">
+          {quickLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-primary underline hover:text-primary/80"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section
+        id="contact"
+        className="bg-primary text-white py-16 px-4 text-center"
+      >
+        <h2 className="text-3xl font-bold mb-4">Let&apos;s Collaborate</h2>
+        <p className="mb-6">
+          Whether it’s a project, an idea, or just a chat — I’m open!
+        </p>
+        <Link
+          href="mailto:youremail@example.com"
+          className="inline-block px-6 py-3 bg-white text-primary font-semibold rounded-md hover:bg-gray-100 transition"
+        >
+          Contact Me
+        </Link>
+      </section>
 
       <footer>
         <Footer />
