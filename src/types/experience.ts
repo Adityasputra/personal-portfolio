@@ -6,3 +6,9 @@ export interface Experience {
   date: string;
   icon: string;
 }
+
+export interface TimelineItem {
+  year: string;
+  title: string;
+  description: string;
+}
