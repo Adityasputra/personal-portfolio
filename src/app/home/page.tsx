@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import TechSection from "@/components/ui/TechSection";
 
 import { NavigationsMenu } from "@/components/NavigationMenu";
 import Link from "next/link";
@@ -11,12 +10,6 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
 import ExperiencePage from "../experiences/page";
 import Timeline from "@/components/Timeline";
 
