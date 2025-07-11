@@ -8,10 +8,9 @@ import { NavigationsMenu } from "@/components/NavigationMenu";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
-import ExperiencePage from "../experiences/page";
 import Timeline from "@/components/Timeline";
+import AboutMe from "@/components/layout/AboutMe";
 
 export default function Page() {
   const techSections = [
@@ -100,6 +99,34 @@ export default function Page() {
         </p>
       </section>
 
+      {/* Biography + Life Values in Grid */}
+      <section className="py-12 px-4 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Biography */}
+        <div className="bg-muted p-6 rounded-lg">
+          <h2 className="text-2xl font-bold mb-4">Biography</h2>
+          <p className="text-muted-foreground text-sm md:text-base">
+            I&apos;m a technology enthusiast passionate about programming,
+            especially in web development. My journey began in high school and
+            continued through completing the Hacktiv8 bootcamp as a full-stack
+            JavaScript developer. I&apos;m always learning new technologies to
+            stay ahead and improve my skills.
+          </p>
+        </div>
+
+        {/* Values & Life Principles */}
+        <div className="bg-muted p-6 rounded-lg">
+          <h2 className="text-2xl font-bold mb-4">Values & Life Principles</h2>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <li>Live with integrity and honesty.</li>
+            <li>Never stop learning and sharing.</li>
+            <li>Create impact with intention.</li>
+            <li>Balance logic and creativity.</li>
+          </ul>
+        </div>
+      </section>
+
+      <AboutMe />
+
       {/* Skills Section */}
       <section className="bg-gray-900 py-12 px-4 md:px-20">
         <Card>
@@ -132,7 +159,6 @@ export default function Page() {
         </ul>
       </section>
 
-      <ExperiencePage />
       <Timeline />
 
       {/* Quick Links Section */}
@@ -168,9 +194,9 @@ export default function Page() {
         </Link>
       </section>
 
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </>
   );
 }
