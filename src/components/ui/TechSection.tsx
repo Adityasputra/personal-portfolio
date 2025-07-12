@@ -29,4 +29,6 @@ const TechSection: React.FC<TechSectionProps> = React.memo(
   }
 );
 
+TechSection.displayName = "TechSection";
+
 export default TechSection;

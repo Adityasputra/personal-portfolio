@@ -67,4 +67,6 @@ const Card = React.memo(({ project }: ProjectProps) => {
   );
 });
 
+Card.displayName = "ProjectCard";
+
 export default Card;

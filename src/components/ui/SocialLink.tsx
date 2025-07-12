@@ -38,4 +38,6 @@ const SocialLinks = React.memo(({ project }: SocialLinksProps) => {
   );
 });
 
+SocialLinks.displayName = "SocialLinks";
+
 export default SocialLinks;
