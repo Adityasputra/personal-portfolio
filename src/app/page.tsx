@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import BlurText from "@/components/BlurText";
 import { Button } from "@/components/ui/button";
-import { GridBackground } from "@/components/ui/GridBackground";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function DigitalGatePage() {

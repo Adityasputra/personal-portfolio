@@ -339,7 +339,7 @@ function MobileDropdownItem({
         {/* Dropdown Content */}
         <Collapsible.Content className="data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden">
           <div className="border-t border-border bg-muted/20">
-            {item.submenu.map((subItem, index) => (
+            {item.submenu.map((subItem) => (
               <Link
                 key={subItem.title}
                 href={subItem.href}

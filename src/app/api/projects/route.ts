@@ -37,6 +37,7 @@ export async function GET(req: NextRequest) {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
+    console.error("Error fetching projects:", error);
     return NextResponse.json(
       { message: "Internal Server Error" },
       { status: 500 }
