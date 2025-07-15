@@ -1,99 +1,17 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import {
-  User,
-  Target,
-  Heart,
-  Code,
-  Lightbulb,
-  TrendingUp,
   Quote,
   Calendar,
   MapPin,
   Coffee,
   ArrowRight,
+  Sparkles,
+  User,
 } from "lucide-react";
 import { Badge } from "../ui/badge";
-
-interface ContentData {
-  title: string;
-  content?: string;
-  size?: "small" | "medium" | "large" | "extra-large";
-  icon?: React.ReactNode;
-  quote?: string;
-  badge?: string;
-  stats?: { label: string; value: string }[];
-  tags?: string[];
-}
-
-const contentData: ContentData[] = [
-  {
-    title: "Brief Biography",
-    content:
-      "I'm from Indonesia — a web developer who thrives on learning. My journey began with curiosity and has grown into a career as a fullstack developer.",
-    quote: '"Curiosity was the spark, coding is the journey."',
-    size: "extra-large",
-    icon: <User className="w-5 h-5" />,
-    badge: "🇮🇩 Indonesia",
-    stats: [
-      { label: "Experience", value: "3+ Years" },
-      { label: "Projects", value: "50+" },
-      { label: "Technologies", value: "15+" },
-    ],
-    tags: ["Frontend", "Backend", "Full Stack"],
-  },
-  {
-    title: "Core Values",
-    content:
-      "Honesty, hard work, and a spirit of sharing are the cornerstones of my life.",
-    quote: '"Integrity and kindness above all."',
-    size: "medium",
-    icon: <Heart className="w-4 h-4" />,
-    badge: "💎 Principles",
-    tags: ["Integrity", "Empathy", "Growth"],
-  },
-  {
-    title: "Personal Principles",
-    content: "Simple in style, yet strong in meaning and action.",
-    quote: '"Simplicity is the ultimate sophistication."',
-    size: "medium",
-    icon: <Target className="w-4 h-4" />,
-    badge: "🎯 Focus",
-    tags: ["Minimalism", "Quality", "Purpose"],
-  },
-  {
-    title: "Career Goals",
-    content:
-      "To build meaningful digital products that make a positive impact and are used by many.",
-    size: "large",
-    icon: <TrendingUp className="w-4 h-4" />,
-    badge: "🚀 Vision",
-    tags: ["Impact", "Innovation", "Scale", "User-Centric"],
-  },
-  {
-    title: "Daily Motivation",
-    content:
-      "I believe every line of code has the potential to make a positive difference in someone's life.",
-    size: "large",
-    icon: <Code className="w-4 h-4" />,
-    badge: "⚡ Energy",
-    stats: [
-      { label: "Daily Coding", value: "6+ Hours" },
-      { label: "Learning", value: "2+ Hours" },
-    ],
-    tags: ["Problem Solving", "Clean Code", "Best Practices"],
-  },
-  {
-    title: "Learning Philosophy",
-    content:
-      "Learning is not just about gaining knowledge — it's about cultivating patience and curiosity.",
-    quote: '"Stay curious, stay patient."',
-    size: "large",
-    icon: <Lightbulb className="w-4 h-4" />,
-    badge: "📚 Growth",
-    tags: ["Continuous Learning", "Adaptability", "Curiosity"],
-  },
-];
+import { contentData } from "@/data/aboutme/aboutme";
+import { useRouter } from "next/navigation";
 
 // Helper function to get grid class based on content size
 const getGridClass = (size: string) => {
@@ -112,36 +30,9 @@ const getGridClass = (size: string) => {
 };
 
 export default function AboutMe() {
+  const router = useRouter();
   return (
-    <section className="relative py-20 px-4 md:px-8 lg:px-20 bg-background text-foreground overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 opacity-20 pointer-events-none z-0" />
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-primary/10"
-            style={{
-              width: Math.random() * 10 + 5,
-              height: Math.random() * 10 + 5,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, (Math.random() - 0.5) * 40],
-              x: [0, (Math.random() - 0.5) * 40],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-
+    <section className="relative py-20 px-4 md:px-8 lg:px-20 text-foreground overflow-hidden">
       <div className="relative max-w-7xl mx-auto space-y-16 z-10">
         {/* Section Header */}
         <motion.div
@@ -152,8 +43,8 @@ export default function AboutMe() {
           className="text-center space-y-6"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            <User className="w-4 h-4" />
             <span>Get to know me</span>
-            <ArrowRight className="w-4 h-4" />
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -172,14 +63,14 @@ export default function AboutMe() {
               className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 text-sm border border-border/50 hover:bg-muted transition-colors"
             >
               <Calendar className="w-4 h-4 text-primary" />
-              <span>Active since 2021</span>
+              <span>Active since 2022</span>
             </motion.div>
             <motion.div
               whileHover={{ y: -2 }}
               className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 text-sm border border-border/50 hover:bg-muted transition-colors"
             >
               <MapPin className="w-4 h-4 text-primary" />
-              <span>Jakarta, Indonesia</span>
+              <span>Sidoarjo, Indonesia</span>
             </motion.div>
             <motion.div
               whileHover={{ y: -2 }}
@@ -199,7 +90,6 @@ export default function AboutMe() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.01 }}
                 className={cn(
@@ -207,12 +97,6 @@ export default function AboutMe() {
                   getGridClass(item.size || "medium")
                 )}
               >
-                {/* Grid Pattern Background */}
-                <div className="absolute inset-0 bg-[radial-gradient(#ffffff10_1px,transparent_1px)] [background-size:16px_16px] opacity-10" />
-
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
                 <div className="relative h-full p-5 flex flex-col">
                   {/* Header with Badge */}
                   <div className="flex items-center justify-between mb-3">
@@ -303,7 +187,6 @@ export default function AboutMe() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -3 }}
                 className={cn(
@@ -312,24 +195,23 @@ export default function AboutMe() {
                     "md:col-span-2"
                 )}
               >
-                <div className="absolute inset-0 bg-[radial-gradient(#ffffff10_1px,transparent_1px)] [background-size:16px_16px] opacity-10" />
-
                 <div className="relative p-5">
                   {/* Header with Badge */}
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-2 min-w-0">
                       <motion.div
                         whileHover={{ rotate: 10, scale: 1.1 }}
-                        className="p-2 rounded-lg bg-primary/10 text-primary backdrop-blur-sm"
+                        className="p-2 rounded-lg bg-primary/10 text-primary backdrop-blur-sm shrink-0"
                       >
                         {item.icon}
                       </motion.div>
-                      <h3 className="text-lg font-semibold text-foreground/90 group-hover:text-primary transition-colors">
+                      <h3 className="text-lg font-semibold text-foreground/90 group-hover:text-primary transition-colors truncate">
                         {item.title}
                       </h3>
                     </div>
+
                     {item.badge && (
-                      <span className="text-xs px-2 py-1 rounded-full bg-primary/5 text-primary/80 font-medium border border-primary/10">
+                      <span className="text-xs px-2 py-1 rounded-full bg-primary/5 text-primary/80 font-medium border border-primary/10 whitespace-nowrap">
                         {item.badge}
                       </span>
                     )}
@@ -401,10 +283,12 @@ export default function AboutMe() {
           viewport={{ once: true }}
           className="text-center mt-12 space-y-6"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20 hover:bg-primary/15 transition-colors">
-            <span>✨</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-sm font-medium border border-slate-300 dark:border-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
             <span>
-              Let&apos;s collaborate and create something impactful together
+              <Sparkles className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+            </span>
+            <span>
+              Keep growing, keep building — greatness is crafted, not gifted.
             </span>
           </div>
 
@@ -412,6 +296,7 @@ export default function AboutMe() {
             <motion.button
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => router.push("/portfolio")}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary bg-primary/5 text-primary hover:bg-primary hover:text-background transition-all shadow-sm hover:shadow-primary/20"
             >
               View Portfolio
@@ -420,6 +305,7 @@ export default function AboutMe() {
             <motion.button
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => router.push("/resume")}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-muted/70 text-foreground hover:bg-muted transition-all shadow-sm hover:shadow-muted-foreground/10 border border-border/30"
             >
               Download Resume
@@ -427,6 +313,7 @@ export default function AboutMe() {
             <motion.button
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => router.push("/gallery")}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-muted/70 text-foreground hover:bg-muted transition-all shadow-sm hover:shadow-muted-foreground/10 border border-border/30"
             >
               Gallery
