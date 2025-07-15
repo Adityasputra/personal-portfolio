@@ -1,6 +1,6 @@
 import { GraduationCap, Code, Plane, Sparkles } from "lucide-react";
 
-export interface TimelineItem {
+export interface TimelineItemType {
   id: string;
   year: string;
   title: string;
@@ -13,7 +13,7 @@ export interface TimelineItem {
   gradient?: string;
 }
 
-export const timelineData: TimelineItem[] = [
+export const timelineData: TimelineItemType[] = [
   {
     id: "1",
     year: "2024",

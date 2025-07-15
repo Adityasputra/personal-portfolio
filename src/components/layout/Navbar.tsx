@@ -25,10 +25,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
-import ThemeToggle from "./ui/ThemeToggle";
 import { formatDate } from "@/lib/dateFormated";
 import { cn } from "@/lib/utils";
 import { navigationItems } from "@/data/navbar/navigation-items";
+import ThemeToggle from "../ui/ThemeToggle";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
