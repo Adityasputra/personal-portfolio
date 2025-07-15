@@ -1,0 +1,138 @@
+import {
+  Home,
+  Briefcase,
+  BookOpen,
+  Image,
+  Code,
+  Calendar,
+  Globe,
+  Star,
+} from "lucide-react";
+
+export interface navigationType {
+  title: string;
+  icon: React.ReactNode;
+  submenu: {
+    title: string;
+    href: string;
+    description: string;
+    icon?: React.ReactNode;
+    badge?: string;
+  }[];
+}
+
+export const navigationItems: navigationType[] = [
+  {
+    title: "Home",
+    icon: <Home className="w-4 h-4" />,
+    submenu: [
+      {
+        title: "Biography",
+        href: "/about",
+        description: "Learn more about me and my journey",
+        icon: <Home className="w-4 h-4" />,
+      },
+      {
+        title: "Skills and Tools",
+        href: "/skills",
+        description: "Technologies and tools I work with",
+        icon: <Code className="w-4 h-4" />,
+      },
+      {
+        title: "Timeline",
+        href: "/timeline",
+        description: "My professional timeline and milestones",
+        icon: <Calendar className="w-4 h-4" />,
+      },
+    ],
+  },
+  {
+    title: "Portfolio",
+    icon: <Briefcase className="w-4 h-4" />,
+    submenu: [
+      {
+        title: "Web Projects",
+        href: "/portfolio/web",
+        description: "Modern websites, landing pages, and web platforms",
+        icon: <Globe className="w-4 h-4" />,
+        badge: "15+",
+      },
+      {
+        title: "AI / ML Projects",
+        href: "/portfolio/ai",
+        description:
+          "Artificial Intelligence and Machine Learning implementations",
+        icon: <Star className="w-4 h-4" />,
+        badge: "New",
+      },
+      {
+        title: "Bootcamp Projects",
+        href: "/portfolio/bootcamp",
+        description: "Project deliverables from training programs",
+        icon: <Code className="w-4 h-4" />,
+        badge: "8+",
+      },
+      {
+        title: "Experimental Projects",
+        href: "/portfolio/experimental",
+        description: "Concepts, prototypes, and innovative ideas",
+        icon: <BookOpen className="w-4 h-4" />,
+        badge: "Beta",
+      },
+    ],
+  },
+  {
+    title: "Blog",
+    icon: <BookOpen className="w-4 h-4" />,
+    submenu: [
+      {
+        title: "Notes",
+        href: "/blog/notes",
+        description: "Self-study notes across topics",
+        icon: <BookOpen className="w-4 h-4" />,
+      },
+      {
+        title: "Programming",
+        href: "/blog/programming",
+        description: "Tips, guides and development insights",
+        icon: <Code className="w-4 h-4" />,
+      },
+      {
+        title: "Philosophy and Logic",
+        href: "/blog/philosophy",
+        description: "Philosophy, logic, and cognitive exploration",
+        icon: <Star className="w-4 h-4" />,
+      },
+      {
+        title: "Self-Development",
+        href: "/blog/self-development",
+        description: "Personal growth and self-reflection",
+        icon: <Home className="w-4 h-4" />,
+      },
+    ],
+  },
+  {
+    title: "Gallery",
+    icon: <Image className="w-4 h-4" />,
+    submenu: [
+      {
+        title: "Digital Art",
+        href: "/gallery/digital-art",
+        description: "Original digital artwork and illustrations",
+        icon: <Image className="w-4 h-4" />,
+      },
+      {
+        title: "Design",
+        href: "/gallery/design",
+        description: "Posters, layouts, and graphic designs",
+        icon: <Briefcase className="w-4 h-4" />,
+      },
+      {
+        title: "Photography",
+        href: "/gallery/photography",
+        description: "Photo collections and visual stories",
+        icon: <Star className="w-4 h-4" />,
+      },
+    ],
+  },
+];

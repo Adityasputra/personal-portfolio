@@ -1,6 +1,6 @@
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 
-export interface SocialLink {
+export interface SocialLinkType {
   name: string;
   href: string;
   icon: React.ReactNode;
@@ -9,7 +9,7 @@ export interface SocialLink {
   description: string;
 }
 
-export const socialLinks: SocialLink[] = [
+export const socialLinks: SocialLinkType[] = [
   {
     name: "GitHub",
     href: "https://github.com/Adityasputra",

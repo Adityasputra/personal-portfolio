@@ -1,9 +1,9 @@
-export interface QuickLink {
+export interface QuickLinkType {
   name: string;
   href: string;
 }
 
-export const quickLinks: QuickLink[] = [
+export const quickLinks: QuickLinkType[] = [
   { name: "About", href: "/home" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Blog", href: "/blog" },
