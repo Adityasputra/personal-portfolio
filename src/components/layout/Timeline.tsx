@@ -70,7 +70,7 @@ export default function Timeline() {
           </h2>
 
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            From multimedia student to aspiring tech innovator - here's my
+            From multimedia student to aspiring tech innovator - here&apos;s my
             journey through education, bootcamps, and future aspirations.
           </p>
         </motion.div>
@@ -219,9 +219,11 @@ export default function Timeline() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary/10 text-primary text-sm font-medium">
-            <Sparkles className="w-4 h-4" />
-            <span>The journey continues... </span>
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-sm font-medium border border-slate-300 dark:border-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+            <span>
+              <Sparkles className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+            </span>
+            <span>The journey continues...</span>
           </div>
         </motion.div>
       </div>

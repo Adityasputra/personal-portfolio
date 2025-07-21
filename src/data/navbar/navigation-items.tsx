@@ -2,7 +2,7 @@ import {
   Home,
   Briefcase,
   BookOpen,
-  Image,
+  Image as ImageIcon,
   Code,
   Calendar,
   Globe,
@@ -113,13 +113,13 @@ export const navigationItems: navigationType[] = [
   },
   {
     title: "Gallery",
-    icon: <Image className="w-4 h-4" />,
+    icon: <ImageIcon className="w-4 h-4" />,
     submenu: [
       {
         title: "Digital Art",
         href: "/gallery/digital-art",
         description: "Original digital artwork and illustrations",
-        icon: <Image className="w-4 h-4" />,
+        icon: <ImageIcon className="w-4 h-4" />,
       },
       {
         title: "Design",
