@@ -1,5 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
-import https from "https";
+import { NextResponse } from "next/server";
 
 interface SpotifyTokenResponse {
   access_token: string;
@@ -31,7 +30,7 @@ interface SpotifyPlaylistResponse {
   offset: number;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const client_id = process.env.SPOTIFY_CLIENT_ID;
     const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -55,8 +54,6 @@ export async function GET(request: NextRequest) {
         { status: 500 }
       );
     }
-
-    const agent = new https.Agent({ keepAlive: true });
 
     // Get access token
     console.log("🔑 Requesting access token...");

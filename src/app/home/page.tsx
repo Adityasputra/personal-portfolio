@@ -2,152 +2,206 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
+import {
+  MapPin,
+  Calendar,
+  ArrowDown,
+  Github,
+  Linkedin,
+  Sparkles,
+} from "lucide-react";
 
-import { NavigationsMenu } from "@/components/NavigationMenu";
-import Link from "next/link";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-
-import Timeline from "@/components/Timeline";
+import Timeline from "@/components/layout/Timeline";
 import ScrollVelocity from "@/components/ScrollVelocity";
-
-const AboutMe = dynamic(() => import("@/components/layout/AboutMe"), {
-  ssr: false,
-});
-
-const Footer = dynamic(() => import("@/components/Footer"), {
-  ssr: false,
-});
+import SkillsetAndTools from "@/components/layout/SkillsetAndTools";
+import AboutMe from "@/components/layout/AboutMe";
+import Footer from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import CallToAction from "@/components/layout/CallToAction";
+import { Button } from "@/components/ui/button";
 
 export default function Page() {
-  const techSections = [
-    { title: "Language", technologies: ["Javascript", "Typescript", "Go"] },
-    {
-      title: "Frontend & Mobile",
-      technologies: [
-        "React",
-        "NextJs",
-        "Tailwind",
-        "Redux",
-        "Vite",
-        "React Native",
-      ],
-    },
-    {
-      title: "Backend & Database",
-      technologies: ["ExpressJs", "NodeJs", "PostgreSQL", "MongoDB"],
-    },
-    { title: "Cloud & DevOps", technologies: ["AWS", "Docker"] },
-  ];
-  const quickLinks = [
-    { name: "Blog", href: "/blog" },
-    { name: "Gallery", href: "/portfolio" },
-    { name: "Projects", href: "/projects" },
-  ];
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    aboutSection?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
-      <NavigationsMenu />
+      <nav className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md">
+        <Navbar />
+      </nav>
 
-      <main className="container mx-auto min-h-screen flex flex-col lg:flex-row items-center gap-8">
+      {/* Hero Section */}
+      <main className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Content Container */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 sm:pt-20 lg:pt-0">
+          <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left space-y-4 sm:space-y-6"
+            >
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+              >
+                Hi there, I&apos;m{" "}
+                <span className="bg-clip-text">Aditya Saputra</span>
+              </motion.h1>
+
+              <motion.blockquote
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl"
+              >
+                Be creative in every step, keep learning, and bring ideas to
+                life through simple yet impactful code.
+              </motion.blockquote>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground"
+              >
+                <div className="flex items-center gap-1">
+                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span>Sidoarjo, Indonesia</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span>Full-stack Developer</span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+                className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3"
+              >
+                <span className="text-xs sm:text-sm text-muted-foreground">
+                  Follow me:
+                </span>
+                <div className="flex gap-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() =>
+                      window.open("https://github.com/Adityasputra", "_blank")
+                    }
+                    className="hover:text-primary"
+                  >
+                    <Github className="w-4 h-4" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() =>
+                      window.open(
+                        "https://linkedin.com/in/aditya-saputra-653133292",
+                        "_blank"
+                      )
+                    }
+                    className="hover:text-primary"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </Button>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full lg:w-1/2 flex justify-center mt-6 lg:mt-0"
+            >
+              <div className="relative group">
+                {/* Main Image */}
+                <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-border/20 shadow-xl">
+                  <Image
+                    src="/images/avatar.webp"
+                    alt="Aditya Saputra's Avatar Profile"
+                    fill
+                    priority
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 240px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
+                  />
+                </div>
+
+                {/* Floating Badge */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                  className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-background border border-border rounded-full p-2 sm:p-3 shadow-lg"
+                >
+                  <Sparkles className="w-4 h-4 sm:w-6 sm:h-6 text-primary" />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="lg:w-1/2 flex flex-col items-center text-center gap-4 px-4 lg:items-start lg:text-left"
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <h1 className="text-3xl lg:text-6xl font-bold">
-            Hi there, I&apos;m Aditya Saputra
-          </h1>
-          <blockquote className="text-lg font-light leading-relaxed">
-            Jadilah kreatif dalam setiap langkah, terus belajar, dan wujudkan
-            ide-ide melalui kode yang sederhana namun berdampak besar
-          </blockquote>
-          <p className="text-sm italic font-light text-gray-600">
-            @Adityasputra
-          </p>
-
-          <Link
-            href="#contact"
-            className="inline-block mt-4 px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/80 transition"
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={scrollToAbout}
+            className="flex flex-col items-center gap-1 hover:text-primary"
           >
-            Let&apos;s Connect
-          </Link>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="lg:w-1/2 flex justify-center"
-        >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-            <Image
-              src="/images/avatar.webp"
-              alt="Aditya Saputra's Avatar Profile"
-              width={400}
-              height={400}
-              priority
-              className="object-center object-cover"
-            />
-          </div>
+            <span className="text-xs hidden sm:block">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ArrowDown className="w-4 h-4" />
+            </motion.div>
+          </Button>
         </motion.div>
       </main>
 
-      <section className="bg-muted py-12">
+      {/* Marquee Section */}
+      <motion.section
+        className="bg-muted/50 border-y border-border/50 py-2 sm:py-4"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <ScrollVelocity
-          texts={["Hello", "World"]}
+          texts={["Creative", "Visionary"]}
           velocity={100}
           className="custom-scroll-text"
         />
-      </section>
+      </motion.section>
 
-      <AboutMe />
+      {/* Main Content Sections */}
+      <div id="about">
+        <AboutMe />
+      </div>
 
-      {/* Skills Section */}
-      {/* <section className="bg-gray-900 py-12 px-4 md:px-20">
-        <Card>
-          <CardHeader>
-            <CardTitle>Skillset & Tools</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {techSections.map((items) => (
-              <div key={items.title} className="space-y-2">
-                <p className="text-sm font-semibold">{items.title}</p>
-                <div className="flex flex-wrap gap-2 mt-1">
-                  {items.technologies.map((tech) => (
-                    <Badge key={tech}>{tech}</Badge>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </section> */}
+      <SkillsetAndTools />
 
       <Timeline />
 
-      {/* Call to Action */}
-      <section
-        id="contact"
-        className="bg-primary text-white py-16 px-4 text-center"
-      >
-        <h2 className="text-3xl font-bold mb-4">Let&apos;s Collaborate</h2>
-        <p className="mb-6">
-          Whether it’s a project, an idea, or just a chat — I’m open!
-        </p>
-        <Link
-          href="mailto:youremail@example.com"
-          className="inline-block px-6 py-3 bg-white text-primary font-semibold rounded-md hover:bg-gray-100 transition"
-        >
-          Contact Me
-        </Link>
-      </section>
+      <CallToAction />
 
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }

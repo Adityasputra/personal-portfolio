@@ -17,6 +17,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 interface GalleryComingSoonLayoutProps {
   title: string;
@@ -73,33 +74,7 @@ export default function GalleryComingSoonLayout({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(25)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-primary/5"
-            style={{
-              width: Math.random() * 12 + 4,
-              height: Math.random() * 12 + 4,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, (Math.random() - 0.5) * 40],
-              x: [0, (Math.random() - 0.5) * 40],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-
+    <div className="min-h-screen relative overflow-hidden">
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-12">
         <motion.div
           variants={containerVariants}
@@ -109,10 +84,10 @@ export default function GalleryComingSoonLayout({
         >
           {/* Back Button */}
           <motion.div variants={itemVariants} className="mb-8">
-            <Link href="/gallery">
+            <Link href="/home">
               <Button variant="ghost" className="group">
                 <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-                Back to Gallery
+                Back to Home
               </Button>
             </Link>
           </motion.div>
@@ -177,7 +152,7 @@ export default function GalleryComingSoonLayout({
                         className="relative group overflow-hidden rounded-xl border border-border/20 bg-muted/30"
                       >
                         <div className="aspect-square">
-                          <img
+                          <Image
                             src={src}
                             alt={`Preview ${i + 1}`}
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
@@ -289,10 +264,10 @@ export default function GalleryComingSoonLayout({
                   >
                     <CheckCircle className="w-6 h-6 text-green-600 mx-auto mb-2" />
                     <p className="text-sm font-medium text-green-600">
-                      You're on the early access list!
+                      You&apos;re on the early access list!
                     </p>
                     <p className="text-xs text-green-600/80 mt-1">
-                      We'll notify you when the gallery launches
+                      We&apos;ll notify you when the gallery launches
                     </p>
                   </motion.div>
                 )}

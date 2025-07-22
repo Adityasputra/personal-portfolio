@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Starfield from "./Starfield";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -28,10 +27,6 @@ export function GridBackground({
         className
       )}
     >
-      {/* <div className="absolute inset-0 z-0">
-        <Starfield />
-      </div> */}
-
       {/* Grid animasi */}
       <motion.div
         aria-hidden="true"

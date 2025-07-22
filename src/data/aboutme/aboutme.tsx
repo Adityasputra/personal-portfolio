@@ -21,8 +21,8 @@ export const contentData: ContentDataType[] = [
     icon: <User className="w-5 h-5" />,
     badge: "🇮🇩 Indonesia",
     stats: [
-      { label: "Experience", value: "3+ Years" },
-      { label: "Projects", value: "50+" },
+      { label: "Experience", value: "1+ Years" },
+      { label: "Projects", value: "12+" },
       { label: "Technologies", value: "15+" },
     ],
     tags: ["Frontend", "Backend", "Full Stack"],
@@ -49,7 +49,7 @@ export const contentData: ContentDataType[] = [
   {
     title: "Career Goals",
     content:
-      "To build meaningful digital products that make a positive impact and are used by many.",
+      "I want to build digital products that are meaningful to myself and become a tangible manifestation of the life principles I believe in.",
     size: "large",
     icon: <TrendingUp className="w-4 h-4" />,
     badge: "🚀 Vision",
