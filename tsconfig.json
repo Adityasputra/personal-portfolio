@@ -31,6 +31,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src"
-  ],
+, "src/content"  ],
   "exclude": ["node_modules"]
 }
