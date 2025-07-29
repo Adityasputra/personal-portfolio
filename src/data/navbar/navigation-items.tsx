@@ -4,9 +4,11 @@ import {
   BookOpen,
   Image as ImageIcon,
   Code,
-  Calendar,
   Globe,
   Star,
+  BrainCircuit,
+  FlaskConical,
+  ListMusic,
 } from "lucide-react";
 
 export interface navigationType {
@@ -27,22 +29,22 @@ export const navigationItems: navigationType[] = [
     icon: <Home className="w-4 h-4" />,
     submenu: [
       {
-        title: "Biography",
-        href: "/about",
-        description: "Learn more about me and my journey",
-        icon: <Home className="w-4 h-4" />,
+        title: "AI Playground",
+        href: "/ai-playground",
+        description: "Explore my experiments in AI and machine learning",
+        icon: <BrainCircuit className="w-4 h-4" />,
       },
       {
-        title: "Skills and Tools",
-        href: "/skills",
-        description: "Technologies and tools I work with",
-        icon: <Code className="w-4 h-4" />,
+        title: "Experimental Code",
+        href: "/experiments-code",
+        description: "Creative coding experiments and tech stack showcases",
+        icon: <FlaskConical className="w-4 h-4" />,
       },
       {
-        title: "Timeline",
-        href: "/timeline",
-        description: "My professional timeline and milestones",
-        icon: <Calendar className="w-4 h-4" />,
+        title: "Playlist",
+        href: "/playlist",
+        description: "Highlights of my journey—projects, music, and more",
+        icon: <ListMusic className="w-4 h-4" />,
       },
     ],
   },

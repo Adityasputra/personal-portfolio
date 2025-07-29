@@ -44,22 +44,12 @@ export default function Page() {
 
   return (
     <>
-      <Head>
-        <title>Aditya Saputra – Full Stack Developer</title>
-        <meta
-          name="description"
-          content="Digital playground and portfolio of Aditya Saputra. Full Stack Developer, Designer, and Creative Thinker."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="UTF-8" />
-      </Head>
-
       <nav className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md">
         <Navbar />
       </nav>
 
       {/* Hero Section */}
-      <main className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <main className="relative py-24 sm:py-32 flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
             {/* Text */}

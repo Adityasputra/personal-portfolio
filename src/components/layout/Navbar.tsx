@@ -29,6 +29,7 @@ import { formatDate } from "@/lib/dateFormated";
 import { cn } from "@/lib/utils";
 import { navigationItems } from "@/data/navbar/navigation-items";
 import ThemeToggle from "../ui/ThemeToggle";
+import Image from "next/image";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -110,19 +111,34 @@ export function Navbar() {
                         >
                           {item.title === "Home" && (
                             <div className="grid lg:grid-cols-[.75fr_1fr] gap-4">
-                              <div className="flex h-full flex-col justify-center space-y-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 p-6 border border-primary/20">
-                                <div className="text-xl font-semibold text-primary">
-                                  Welcome
-                                </div>
-                                <p className="text-sm text-muted-foreground leading-relaxed">
-                                  Explore my digital portfolio and creative
-                                  journey through code, design, and innovation.
-                                </p>
-                                <div className="flex items-center gap-2 text-xs text-primary">
-                                  <MapPin className="w-3 h-3" />
-                                  <span>Sidoarjo, Indonesia</span>
+                              <div className="relative rounded-xl overflow-hidden min-h-[220px]">
+                                <Image
+                                  src="/images/bg-home.webp"
+                                  alt="Background Home"
+                                  fill
+                                  sizes="(max-width: 1024px) 100vw, 50vw"
+                                  priority
+                                  className="object-cover object-center"
+                                />
+
+                                {/* Overlay content */}
+                                <div className="relative z-10 flex h-full rounded-xl flex-col justify-center space-y-4 p-6 bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm">
+                                  <div className="text-xl font-semibold text-white">
+                                    Welcome
+                                  </div>
+                                  <p className="text-sm leading-relaxed text-white">
+                                    Explore my digital portfolio and creative
+                                    journey through code, design, and
+                                    innovation.
+                                  </p>
+                                  <div className="flex items-center gap-2 text-xs text-white">
+                                    <MapPin className="w-3 h-3" />
+                                    <span>Sidoarjo, Indonesia</span>
+                                  </div>
                                 </div>
                               </div>
+
+                              {/* RIGHT: Menu list */}
                               <div className="grid gap-2">
                                 {item.submenu.map((subItem) => (
                                   <ListItem
@@ -137,6 +153,7 @@ export function Navbar() {
                               </div>
                             </div>
                           )}
+
                           {item.title === "Portfolio" && (
                             <div className="grid md:grid-cols-2 gap-3">
                               {item.submenu.map((subItem) => (
