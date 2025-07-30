@@ -228,3 +228,7 @@ body {
   mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 }
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+  @apply bg-zinc-900 text-white p-4 rounded;
+}

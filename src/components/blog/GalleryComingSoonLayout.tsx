@@ -83,7 +83,10 @@ export default function GalleryComingSoonLayout({
           className="max-w-4xl w-full"
         >
           {/* Back Button */}
-          <motion.div variants={itemVariants} className="mb-8">
+          <motion.div
+            variants={itemVariants}
+            className="mb-8 flex justify-center"
+          >
             <Link href="/home">
               <Button variant="ghost" className="group">
                 <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
@@ -136,7 +139,7 @@ export default function GalleryComingSoonLayout({
               </div>
 
               {/* Preview Grid */}
-              {previewImages.length > 0 && (
+              {/* {previewImages.length > 0 && (
                 <motion.div variants={itemVariants} className="mb-10">
                   <div className="flex items-center justify-center gap-2 mb-6">
                     <Eye className="w-4 h-4 text-primary" />
@@ -169,7 +172,7 @@ export default function GalleryComingSoonLayout({
                     ))}
                   </div>
                 </motion.div>
-              )}
+              )} */}
 
               {/* Stats */}
               <motion.div
@@ -283,22 +286,11 @@ export default function GalleryComingSoonLayout({
                   <span>Expected: </span>
                   <span className="font-medium text-primary">{expected}</span>
                 </div>
-
-                <Link href="/contact">
-                  <Button variant="outline" className="group">
-                    <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                    Contact Me
-                  </Button>
-                </Link>
               </motion.div>
             </div>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-purple-500/10 to-transparent rounded-full blur-3xl" />
     </div>
   );
 }

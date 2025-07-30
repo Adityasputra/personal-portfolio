@@ -163,7 +163,7 @@ export default function NotFoundPage() {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link href="/">
+              <Link href="/home">
                 <Button size="lg" className="group w-full sm:w-auto">
                   <Home className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                   Back to Home
