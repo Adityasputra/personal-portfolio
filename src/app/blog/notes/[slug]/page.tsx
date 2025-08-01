@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -18,7 +18,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const note = getNoteBySlug(params.slug);
+  const { slug } = await params;
+  const note = getNoteBySlug(slug);
   if (!note) return {};
   return {
     title: note.title,
@@ -26,11 +27,12 @@ export async function generateMetadata({
   };
 }
 
-export default function NotePage({ params }: PageProps) {
-  const note = getNoteBySlug(params.slug);
+export default async function NotePage({ params }: PageProps) {
+  const { slug } = await params;
+  const note = getNoteBySlug(slug);
   if (!note) return notFound();
 
-  const { prev, next } = getAdjacentNotes(params.slug);
+  const { prev, next } = getAdjacentNotes(slug);
 
   return (
     <article className="prose dark:prose-invert mx-auto max-w-3xl px-4 py-8">

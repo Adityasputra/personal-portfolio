@@ -2,30 +2,44 @@ import { NotesList } from "@/components/notes/NotesList";
 import TagList from "@/components/notes/TagList";
 import { getAllNotes, getAllTags } from "@/lib/notes";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
-interface TagPageProps {
-  params: { tag: string };
+type TagPageProps = {
+  params: Promise<{ tag: string }>;
+};
+
+export async function generateStaticParams() {
+  const tags = getAllTags();
+  return tags.map((tag) => ({ tag }));
 }
 
-export default function TagPage({ params }: TagPageProps) {
-  const allNotes = getAllNotes();
-  const tags = getAllTags();
+export async function generateMetadata({
+  params,
+}: TagPageProps): Promise<Metadata> {
+  const { tag } = await params;
+  return {
+    title: `Notes tagged with "${tag}"`,
+    description: `All notes tagged with ${tag}`,
+  };
+}
 
-  const filteredNotes = allNotes.filter((note) =>
-    note.tags.includes(params.tag)
-  );
+export default async function TagPage({ params }: TagPageProps) {
+  const { tag } = await params;
+  const notes = getAllNotes().filter((note) => note.tags.includes(tag));
 
-  if (filteredNotes.length === 0) {
+  if (notes.length === 0) {
     return notFound();
   }
+
+  const allTags = getAllTags();
 
   return (
     <div className="max-w-3xl mx-auto py-10">
       <h1 className="text-2xl font-semibold mb-4">
-        Catatan dengan tag: <span className="text-primary">#{params.tag}</span>
+        Catatan dengan tag: <span className="text-primary">#{tag}</span>
       </h1>
-      <TagList tags={tags} />
-      <NotesList notes={filteredNotes} />
+      <TagList tags={allTags} />
+      <NotesList notes={notes} />
     </div>
   );
 }

@@ -6,7 +6,6 @@ interface NoteData {
   title: string;
   date: string;
   tags: string[];
-  [key: string]: any;
 }
 
 export interface Note extends NoteData {
