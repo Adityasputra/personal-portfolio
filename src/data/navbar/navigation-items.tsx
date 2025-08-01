@@ -36,7 +36,7 @@ export const navigationItems: navigationType[] = [
       },
       {
         title: "Experimental Code",
-        href: "/experiments-code",
+        href: "/lab/experimental-code",
         description: "Creative coding experiments and tech stack showcases",
         icon: <FlaskConical className="w-4 h-4" />,
       },
