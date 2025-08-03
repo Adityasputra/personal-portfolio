@@ -21,7 +21,7 @@ export const contentData: ContentDataType[] = [
     icon: <User className="w-5 h-5" />,
     badge: "🇮🇩 Indonesia",
     stats: [
-      { label: "Experience", value: "2+ Years" },
+      { label: "Experience", value: "1+ Years" },
       { label: "Projects", value: "12+" },
       { label: "Technologies", value: "15+" },
     ],
