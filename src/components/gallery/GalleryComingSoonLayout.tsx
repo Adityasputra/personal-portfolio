@@ -3,17 +3,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  ArrowLeft,
   Clock,
   Image as ImageIcon,
   CheckCircle,
   Calendar,
   Bell,
 } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { ButtonNav } from "../custom/button";
 
 interface GalleryComingSoonLayoutProps {
   title: string;
@@ -29,7 +28,7 @@ export default function GalleryComingSoonLayout({
   description,
   expected,
   category = "Gallery",
-  estimatedCount = 50,
+  estimatedCount = 10,
 }: GalleryComingSoonLayoutProps) {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -41,11 +40,40 @@ export default function GalleryComingSoonLayout({
   const handleNotify = async () => {
     if (email && isValidEmail(email)) {
       setIsLoading(true);
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setSubscribed(true);
-      setEmail("");
-      setIsLoading(false);
+
+      try {
+        const url = process.env.SHEETBEST_URL;
+
+        if (!url) {
+          console.error("URL for SheetBest is not defined.");
+          return;
+        }
+
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            timestamp: new Date().toLocaleString("id-ID", {
+              dateStyle: "long",
+              timeStyle: "short",
+            }),
+          }),
+        });
+
+        if (res.ok) {
+          setSubscribed(true);
+          setEmail("");
+        } else {
+          console.error("Error subscribing to early access list");
+        }
+      } catch (error) {
+        console.error("Network error:", error);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -62,10 +90,7 @@ export default function GalleryComingSoonLayout({
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
+    visible: { y: 0, opacity: 1 },
   };
 
   return (
@@ -77,18 +102,7 @@ export default function GalleryComingSoonLayout({
           animate="visible"
           className="max-w-4xl w-full"
         >
-          {/* Back Button */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-8 flex justify-center"
-          >
-            <Link href="/home">
-              <Button variant="ghost" className="group">
-                <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-                Back to Home
-              </Button>
-            </Link>
-          </motion.div>
+          <ButtonNav href="/gallery" label="Back to Gallery" />
 
           {/* Main Content Card */}
           <motion.div
@@ -104,7 +118,7 @@ export default function GalleryComingSoonLayout({
                 >
                   <Badge
                     variant="secondary"
-                    className="bg-primary/10 text-primary border-primary/20"
+                    className="bg-primary/10 text-primary"
                   >
                     <ImageIcon className="w-3 h-3 mr-1" />
                     {category}
@@ -132,42 +146,6 @@ export default function GalleryComingSoonLayout({
                   {description}
                 </motion.p>
               </div>
-
-              {/* Preview Grid */}
-              {/* {previewImages.length > 0 && (
-                <motion.div variants={itemVariants} className="mb-10">
-                  <div className="flex items-center justify-center gap-2 mb-6">
-                    <Eye className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-medium">Preview Gallery</span>
-                  </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    {previewImages.slice(0, 6).map((src, i) => (
-                      <motion.div
-                        key={i}
-                        variants={itemVariants}
-                        whileHover={{ scale: 1.05, y: -5 }}
-                        className="relative group overflow-hidden rounded-xl border border-border/20 bg-muted/30"
-                      >
-                        <div className="aspect-square">
-                          <Image
-                            src={src}
-                            alt={`Preview ${i + 1}`}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                          />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
-                          <span className="text-xs text-white font-medium">
-                            Preview {i + 1}
-                          </span>
-                          <Sparkles className="w-3 h-3 text-white" />
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              )} */}
 
               {/* Stats */}
               <motion.div
