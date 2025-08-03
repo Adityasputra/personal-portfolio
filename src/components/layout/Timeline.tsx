@@ -193,7 +193,7 @@ export default function Timeline() {
                             <motion.span
                               key={i}
                               whileHover={{ scale: 1.05 }}
-                              className="text-xs px-2.5 py-1 rounded-full bg-primary/5 text-primary/80 border border-primary/10 hover:bg-primary/10 transition-colors"
+                              className="text-xs px-2.5 py-1 rounded-full bg-primary/5 text-primary/80 hover:bg-primary/10 transition-colors"
                             >
                               {skill}
                             </motion.span>
