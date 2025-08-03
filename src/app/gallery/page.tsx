@@ -5,42 +5,7 @@ import { Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ButtonNav } from "@/components/custom/button";
 import { GalleryCard } from "@/components/gallery/GalleryCard";
-
-const galleryCategories = [
-  {
-    title: "Digital Art",
-    description:
-      "Digital illustrations, paintings, and visual experiments exploring creativity through technology.",
-    href: "/gallery/digital-art",
-    icon: require("lucide-react").Palette,
-    color: "bg-gradient-to-br from-fuchsia-500 via-purple-500 to-rose-500",
-    count: "5+ pieces",
-    tags: ["Illustration", "Concept Art", "Character Design"],
-    featured: true,
-  },
-  {
-    title: "Design",
-    description:
-      "UI designs, posters, typography, and visual compositions that blend aesthetics with functionality.",
-    href: "/gallery/design",
-    icon: require("lucide-react").PenTool,
-    color: "bg-gradient-to-br from-sky-500 via-indigo-500 to-cyan-400",
-    count: "5+ pieces",
-    tags: ["UI/UX", "Branding", "Typography"],
-    featured: false,
-  },
-  {
-    title: "Photography",
-    description:
-      "Captured moments, edited compositions, and visual documentation of the world around us.",
-    href: "/gallery/photography",
-    icon: require("lucide-react").Camera,
-    color: "bg-gradient-to-br from-lime-400 via-emerald-500 to-teal-500",
-    count: "5+ pieces",
-    tags: ["Portrait", "Landscape", "Street"],
-    featured: false,
-  },
-];
+import galleryCategories from "@/data/gallery/galleryData";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
