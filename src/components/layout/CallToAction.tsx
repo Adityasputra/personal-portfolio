@@ -44,10 +44,7 @@ export default function CallToAction() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
             >
               Ready to explore my{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                digital creations
-              </span>
-              ?
+              <span className=" bg-clip-text">digital creations</span>?
             </motion.h2>
 
             {/* Description */}
@@ -78,7 +75,7 @@ export default function CallToAction() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-background/50 border border-border/30 hover:border-primary/30 transition-all hover:shadow-md"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-background/50 transition-all hover:shadow-md"
                 >
                   <div
                     className={`p-2 rounded-lg bg-primary/10 ${feature.color}`}
@@ -114,24 +111,6 @@ export default function CallToAction() {
                   />
                 </Button>
               </Link>
-
-              {/* <Link href="/contact">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="group w-full sm:w-auto hover:bg-primary/5 hover:border-primary/30"
-                >
-                  <span className="flex items-center gap-2">
-                    Let's Collaborate
-                    <motion.div
-                      animate={{ rotate: [0, 10, -10, 0] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      <Sparkles className="w-4 h-4" />
-                    </motion.div>
-                  </span>
-                </Button>
-              </Link> */}
             </motion.div>
 
             {/* Stats */}
