@@ -211,7 +211,7 @@ export default function AboutMe() {
                     </div>
 
                     {item.badge && (
-                      <span className="text-xs px-2 py-1 rounded-full bg-primary/5 text-primary/80 font-medium border border-primary/10 whitespace-nowrap">
+                      <span className="text-xs px-2 py-1 rounded-full bg-primary/5 text-primary/80 font-medium whitespace-nowrap">
                         {item.badge}
                       </span>
                     )}
@@ -229,7 +229,7 @@ export default function AboutMe() {
                         <motion.div
                           key={statIndex}
                           whileHover={{ y: -2 }}
-                          className="text-center py-2 rounded-lg bg-muted/50 border border-border/20 hover:bg-muted/70 transition-colors"
+                          className="text-center py-2 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors"
                         >
                           <div className="text-sm font-semibold text-primary">
                             {stat.value}
@@ -249,7 +249,7 @@ export default function AboutMe() {
                         <motion.span
                           key={tagIndex}
                           whileHover={{ scale: 1.05 }}
-                          className="text-xs px-2.5 py-1 rounded-full bg-primary/5 text-primary/80 border border-primary/10 hover:bg-primary/10 hover:text-primary transition-colors"
+                          className="text-xs px-2.5 py-1 rounded-full bg-primary/5 text-primary/80 hover:bg-primary/10 hover:text-primary transition-colors"
                         >
                           {tag}
                         </motion.span>
@@ -302,14 +302,15 @@ export default function AboutMe() {
               View Portfolio
               <ArrowRight className="w-4 h-4" />
             </motion.button>
-            <motion.button
+            <motion.a
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => router.push("/resume")}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-muted/70 text-foreground hover:bg-muted transition-all shadow-sm hover:shadow-muted-foreground/10 border border-border/30"
+              href="/Aditya-Saputra-Resume.pdf"
+              download
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-muted/70 text-foreground hover:bg-muted transition-all shadow-sm hover:shadow-muted-foreground/10 border border-border/30 cursor-pointer"
             >
               Download Resume
-            </motion.button>
+            </motion.a>
             <motion.button
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}

@@ -124,7 +124,7 @@ export default function CallToAction() {
               <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
                 <div className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">
-                    15+
+                    12+
                   </div>
                   <div className="text-sm text-muted-foreground">Projects</div>
                 </div>
