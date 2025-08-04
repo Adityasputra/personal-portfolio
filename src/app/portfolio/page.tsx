@@ -348,10 +348,6 @@ export default function PortfolioPage() {
           </motion.div>
         </div>
       </main>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-primary/10 to-transparent rounded-full blur-3xl" />
     </div>
   );
 }
