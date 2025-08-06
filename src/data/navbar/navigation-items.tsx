@@ -84,30 +84,30 @@ export const navigationItems: navigationType[] = [
     ],
   },
   {
-    title: "Blog",
+    title: "Mindscape",
     icon: <BookOpen className="w-4 h-4" />,
     submenu: [
       {
         title: "Notes",
-        href: "/blog/notes",
+        href: "/Mindscape/notes",
         description: "Self-study notes across topics",
         icon: <BookOpen className="w-4 h-4" />,
       },
       {
         title: "Programming",
-        href: "/blog/programming",
+        href: "/Mindscape/programming",
         description: "Tips, guides and development insights",
         icon: <Code className="w-4 h-4" />,
       },
       {
         title: "Philosophy and Logic",
-        href: "/blog/philosophy",
+        href: "/Mindscape/philosophy",
         description: "Philosophy, logic, and cognitive exploration",
         icon: <Star className="w-4 h-4" />,
       },
       {
         title: "Self-Development",
-        href: "/blog/self-development",
+        href: "/Mindscape/self-development",
         description: "Personal growth and self-reflection",
         icon: <Home className="w-4 h-4" />,
       },

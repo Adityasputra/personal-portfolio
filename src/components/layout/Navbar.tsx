@@ -169,7 +169,7 @@ export function Navbar() {
                               ))}
                             </div>
                           )}
-                          {(item.title === "Blog" ||
+                          {(item.title === "Mindscape" ||
                             item.title === "Gallery") && (
                             <div className="grid gap-2">
                               {item.submenu.map((subItem) => (
