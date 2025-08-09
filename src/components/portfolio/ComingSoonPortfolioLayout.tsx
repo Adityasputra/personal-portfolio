@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowLeft, Bell, Clock, Mail } from "lucide-react";
+import { Bell, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import IconAnimation from "./IconAnimation";
+import { ButtonNav } from "../custom/button";
 
 interface FeatureItem {
   icon: React.ComponentType<{ className?: string }>;
@@ -31,7 +31,7 @@ interface ComingSoonLayoutProps {
   expected: string;
 }
 
-export default function ComingSoonLayout({
+export default function ComingSoonPortfolioLayout({
   title,
   description,
   features,
@@ -95,21 +95,10 @@ export default function ComingSoonLayout({
           className="max-w-2xl w-full"
         >
           {/* <IconAnimation /> */}
-
           <h1 className="sr-only">{title}</h1>
 
           {/* Back Button */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-8 mt-4 w-full flex justify-center"
-          >
-            <Link href="/home">
-              <Button variant="ghost" className="group hover:bg-background/50">
-                <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
-                Back to Home
-              </Button>
-            </Link>
-          </motion.div>
+          <ButtonNav href="/portfolio" label="Back to Portfolio" />
 
           {/* Content Card */}
           <motion.div
@@ -159,7 +148,7 @@ export default function ComingSoonLayout({
                   <motion.div
                     key={i}
                     whileHover={{ y: -5 }}
-                    className="p-5 rounded-xl bg-background/70 border border-border/30 hover:border-primary/30 hover:shadow-md transition-all duration-300"
+                    className="p-5 rounded-xl bg-background/70 hover:shadow-md transition-all duration-300"
                   >
                     <div className={`${color} mb-3`}>
                       <Icon className="w-8 h-8 mx-auto" />
@@ -244,22 +233,6 @@ export default function ComingSoonLayout({
                   </div>
                 </motion.div>
               )}
-            </motion.div>
-
-            {/* Action Buttons */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-3 justify-center"
-            >
-              <Link href="/portfolio">
-                <Button variant="outline">Back to Portfolio</Button>
-              </Link>
-              <Link href="/contact">
-                <Button>
-                  <Mail className="w-4 h-4 mr-2" />
-                  Get in Touch
-                </Button>
-              </Link>
             </motion.div>
           </motion.div>
 
