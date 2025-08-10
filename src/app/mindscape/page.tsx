@@ -1,19 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card";
+import { Sparkles } from "lucide-react";
+
 import { ButtonNav } from "@/components/custom/button";
 import { Badge } from "@/components/ui/badge";
 import { sections } from "@/data/mindscape/mindscapeData";
+import { MindscapeCard } from "@/components/mindscape/MindscapeCard";
 
 export default function MindscapePage() {
   return (
@@ -37,36 +30,16 @@ export default function MindscapePage() {
       </motion.section>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
-        {sections.map(({ title, desc, icon: Icon, href, gradient }, i) => (
-          <motion.div
-            key={title}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
-          >
-            <Link href={href}>
-              <Card className="group overflow-hidden border hover:shadow-md hover:-translate-y-1 transition-all">
-                <div className={cn("h-1 w-full bg-gradient-to-r", gradient)} />
-                <CardHeader className="flex flex-col items-center text-center pt-6">
-                  <div
-                    className={cn(
-                      "p-3 rounded-full bg-gradient-to-br text-white mb-4",
-                      gradient
-                    )}
-                  >
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <CardTitle className="text-xl">{title}</CardTitle>
-                  <CardDescription>{desc}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex justify-center text-sm text-primary group-hover:gap-2 transition-all">
-                    Explore <ArrowRight className="w-4 h-4" />
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          </motion.div>
+        {sections.map((section, i) => (
+          <MindscapeCard
+            key={section.title}
+            title={section.title}
+            desc={section.desc}
+            icon={section.icon}
+            href={section.href}
+            gradient={section.gradient}
+            index={i}
+          />
         ))}
       </div>
 
