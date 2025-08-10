@@ -42,23 +42,6 @@ export default function PortfolioPage() {
         </motion.div>
       </section>
 
-      {/* Section header */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-        custom={1}
-        className="flex items-center justify-center"
-      >
-        <div className="flex items-center gap-4">
-          <h2 className="text-xl font-semibold">Browse Projects</h2>
-          <Badge variant="outline" className="text-xs">
-            {portfolioSections.length} Categories
-          </Badge>
-        </div>
-      </motion.section>
-
       {/* Portfolio Cards */}
       <PortfolioCard portfolioSections={portfolioSections} />
 

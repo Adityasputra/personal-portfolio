@@ -50,23 +50,6 @@ export default function GalleryPage() {
         </motion.div>
       </section>
 
-      {/* Section Header */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-        custom={1}
-        className="flex items-center justify-center"
-      >
-        <div className="flex items-center gap-4">
-          <h2 className="text-xl font-semibold">Browse Collections</h2>
-          <Badge variant="outline" className="text-xs">
-            {galleryCategories.length} Categories
-          </Badge>
-        </div>
-      </motion.section>
-
       {/* Gallery Cards */}
       <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
         {galleryCategories.map((category, index) => (

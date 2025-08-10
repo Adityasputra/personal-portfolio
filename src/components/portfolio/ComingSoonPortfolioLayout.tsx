@@ -98,7 +98,9 @@ export default function ComingSoonPortfolioLayout({
           <h1 className="sr-only">{title}</h1>
 
           {/* Back Button */}
-          <ButtonNav href="/portfolio" label="Back to Portfolio" />
+          <div className="mt-4">
+            <ButtonNav href="/portfolio" label="Back to Portfolio" />
+          </div>
 
           {/* Content Card */}
           <motion.div

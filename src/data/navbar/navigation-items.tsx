@@ -57,7 +57,7 @@ export const navigationItems: navigationType[] = [
         href: "/portfolio/web",
         description: "Modern websites, landing pages, and web platforms",
         icon: <Globe className="w-4 h-4" />,
-        badge: "15+",
+        badge: "dev",
       },
       {
         title: "AI / ML Projects",
@@ -65,21 +65,21 @@ export const navigationItems: navigationType[] = [
         description:
           "Artificial Intelligence and Machine Learning implementations",
         icon: <Star className="w-4 h-4" />,
-        badge: "New",
+        badge: "dev",
       },
       {
         title: "Bootcamp Projects",
         href: "/portfolio/bootcamp",
         description: "Project deliverables from training programs",
         icon: <Code className="w-4 h-4" />,
-        badge: "8+",
+        badge: "dev",
       },
       {
         title: "Experimental Projects",
         href: "/portfolio/experimental",
         description: "Concepts, prototypes, and innovative ideas",
         icon: <BookOpen className="w-4 h-4" />,
-        badge: "Beta",
+        badge: "dev",
       },
     ],
   },

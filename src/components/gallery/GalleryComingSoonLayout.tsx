@@ -150,7 +150,9 @@ export default function GalleryComingSoonLayout({
         >
           <h1 className="sr-only">{title}</h1>
 
-          <ButtonNav href="/gallery" label="Back to Gallery" />
+          <div className="mt-4">
+            <ButtonNav href="/gallery" label="Back to Gallery" />
+          </div>
 
           <motion.div
             variants={itemVariants}

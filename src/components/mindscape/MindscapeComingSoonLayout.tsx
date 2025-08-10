@@ -151,7 +151,9 @@ export default function MinscapeComingSoonLayout({
         >
           <h1 className="sr-only">{title}</h1>
 
-          <ButtonNav href="/mindscape" label="Back to Mindscape" />
+          <div className="mt-4">
+            <ButtonNav href="/mindscape" label="Back to Mindscape" />
+          </div>
 
           <motion.div
             variants={itemVariants}
