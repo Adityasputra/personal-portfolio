@@ -1,14 +1,14 @@
 "use client";
 
-import ComingSoonLayout from "@/components/portfolio/ComingSoonLayout";
+import ComingSoonPortfolioLayout from "@/components/portfolio/ComingSoonPortfolioLayout";
 import { Beaker, Puzzle, Lightbulb } from "lucide-react";
 
 export default function PortfolioExperimentalPage() {
   return (
-    <ComingSoonLayout
+    <ComingSoonPortfolioLayout
       title="Experimental Lab"
       description="A collection of UI/UX experiments, animation tests, and playful design ideas that push boundaries."
-      expected="Q4 2025"
+      expected="September 2025"
       badges={[
         { icon: Beaker, label: "Experimental Lab", variant: "secondary" },
         {

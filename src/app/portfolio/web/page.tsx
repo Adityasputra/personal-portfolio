@@ -1,14 +1,14 @@
 "use client";
 
-import ComingSoonLayout from "@/components/portfolio/ComingSoonLayout";
+import ComingSoonPortfolioLayout from "@/components/portfolio/ComingSoonPortfolioLayout";
 import { MonitorSmartphone, Code2, Paintbrush } from "lucide-react";
 
 export default function PortfolioWebPage() {
   return (
-    <ComingSoonLayout
+    <ComingSoonPortfolioLayout
       title="Web Projects Showcase"
       description="A curated selection of responsive websites, UI components, and full-stack projects."
-      expected="Q4 2025"
+      expected="September 2025"
       badges={[
         {
           icon: MonitorSmartphone,

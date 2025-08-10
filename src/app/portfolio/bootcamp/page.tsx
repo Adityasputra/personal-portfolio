@@ -1,14 +1,14 @@
 "use client";
 
-import ComingSoonLayout from "@/components/portfolio/ComingSoonLayout";
+import ComingSoonPortfolioLayout from "@/components/portfolio/ComingSoonPortfolioLayout";
 import { GraduationCap, FileText, Cpu } from "lucide-react";
 
 export default function PortfolioBootcampPage() {
   return (
-    <ComingSoonLayout
+    <ComingSoonPortfolioLayout
       title="Bootcamp Projects"
       description="Projects completed during my intensive coding bootcamp journey. Expect solid foundations and best practices."
-      expected="Q4 2025"
+      expected="September 2025"
       badges={[
         {
           icon: GraduationCap,

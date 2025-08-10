@@ -2,15 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Clock, CheckCircle, AlertCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
-export interface PortfolioSection {
-  title: string;
-  description: string;
-  icon: React.ComponentType<{ className?: string }>;
-  href: string;
-  status: "active" | "coming-soon" | "beta";
-  count: number;
-}
+import { PortfolioSection } from "@/data/portfolio/portfolioData";
 
 interface PortfolioCardProps {
   portfolioSections: PortfolioSection[];

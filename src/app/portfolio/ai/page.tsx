@@ -1,14 +1,14 @@
 "use client";
 
-import ComingSoonLayout from "@/components/portfolio/ComingSoonLayout";
+import ComingSoonPortfolioLayout from "@/components/portfolio/ComingSoonPortfolioLayout";
 import { Code, Rocket, Sparkles, Zap, Clock } from "lucide-react";
 
 export default function PortfolioAIPage() {
   return (
-    <ComingSoonLayout
+    <ComingSoonPortfolioLayout
       title="Building Something Amazing"
       description="I'm crafting an AI portfolio section that will showcase innovative projects, machine learning experiments, and cutting-edge AI solutions. Stay tuned for interactive demos and technical deep dives!"
-      expected="Q4 2025"
+      expected="September 2025"
       badges={[
         { icon: Zap, label: "AI Portfolio", variant: "secondary" },
         {
