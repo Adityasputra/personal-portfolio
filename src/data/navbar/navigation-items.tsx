@@ -89,25 +89,25 @@ export const navigationItems: navigationType[] = [
     submenu: [
       {
         title: "Notes",
-        href: "/Mindscape/notes",
+        href: "/mindscape/notes",
         description: "Self-study notes across topics",
         icon: <BookOpen className="w-4 h-4" />,
       },
       {
         title: "Programming",
-        href: "/Mindscape/programming",
+        href: "/mindscape/programming",
         description: "Tips, guides and development insights",
         icon: <Code className="w-4 h-4" />,
       },
       {
         title: "Philosophy and Logic",
-        href: "/Mindscape/philosophy",
+        href: "/mindscape/philosophy",
         description: "Philosophy, logic, and cognitive exploration",
         icon: <Star className="w-4 h-4" />,
       },
       {
         title: "Self-Development",
-        href: "/Mindscape/self-development",
+        href: "/mindscape/self-development",
         description: "Personal growth and self-reflection",
         icon: <Home className="w-4 h-4" />,
       },
