@@ -290,7 +290,7 @@ export default function MinscapeComingSoonLayout({
                     >
                       <CheckCircle className="w-5 h-5" />
                     </motion.div>
-                    You're on the list!
+                    You&apos;re on the list!
                   </div>
                 </motion.div>
               )}

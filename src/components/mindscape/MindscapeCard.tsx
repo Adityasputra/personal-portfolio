@@ -56,7 +56,7 @@ export function MindscapeCard({
           </CardHeader>
 
           <CardContent>
-            <div className="flex justify-center text-sm text-primary group-hover:gap-2 transition-all">
+            <div className="flex justify-center gap-1 items-center text-sm text-primary group-hover:gap-2 transition-all">
               Explore <ArrowRight className="w-4 h-4" />
             </div>
           </CardContent>
