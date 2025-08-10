@@ -182,7 +182,7 @@ export default function PlaylistFavoritePage() {
           </motion.div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            🎧 Favorite <span className="bg-clip-text">Playlist</span>
+            Favorite <span className="bg-clip-text">Playlist</span>
           </h1>
 
           <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
