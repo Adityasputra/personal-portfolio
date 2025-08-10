@@ -231,7 +231,7 @@ export function TypingSpeedTracker() {
   };
 
   return (
-    <div className="space-y-6 max-w-4xl mx-auto p-6">
+    <div className="space-y-6 max-w-4xl mx-auto ">
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
