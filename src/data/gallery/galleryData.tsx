@@ -1,5 +1,3 @@
-// src/data/galleryCategories.ts
-
 import { Camera, Palette, PenTool } from "lucide-react";
 
 export interface GalleryCategory {
@@ -10,7 +8,6 @@ export interface GalleryCategory {
   color: string;
   count: string;
   tags: string[];
-  featured?: boolean;
 }
 const galleryCategories: GalleryCategory[] = [
   {
@@ -22,7 +19,6 @@ const galleryCategories: GalleryCategory[] = [
     color: "bg-gradient-to-br from-fuchsia-500 via-purple-500 to-rose-500",
     count: "5+ pieces",
     tags: ["Illustration", "Concept Art", "Character Design"],
-    featured: true,
   },
   {
     title: "Design",
@@ -33,7 +29,6 @@ const galleryCategories: GalleryCategory[] = [
     color: "bg-gradient-to-br from-sky-500 via-indigo-500 to-cyan-400",
     count: "5+ pieces",
     tags: ["UI/UX", "Branding", "Typography"],
-    featured: false,
   },
   {
     title: "Photography",
@@ -44,7 +39,6 @@ const galleryCategories: GalleryCategory[] = [
     color: "bg-gradient-to-br from-lime-400 via-emerald-500 to-teal-500",
     count: "5+ pieces",
     tags: ["Portrait", "Landscape", "Street"],
-    featured: false,
   },
 ];
 

@@ -1,11 +1,27 @@
-import GalleryComingSoonLayout from "@/components/gallery/GalleryComingSoonLayout";
+"use client";
 
-export default function GalleryDesignPage() {
+import GalleryComingSoonLayout from "@/components/gallery/GalleryComingSoonLayout";
+import { PenTool, Sparkles } from "lucide-react";
+
+export default function DesignPage() {
   return (
     <GalleryComingSoonLayout
-      title="UI/UX Design Gallery"
-      description="Coming soon: a modern gallery of user interface explorations, UX flows, and design prototypes."
-      expected="Early 2026"
+      title="Design Gallery"
+      description="A showcase of UI/UX designs, branding works, and visual compositions that blend aesthetics with functionality."
+      expected="December 2025"
+      badges={[
+        {
+          icon: PenTool,
+          label: "Design",
+          variant: "secondary",
+        },
+        {
+          icon: Sparkles,
+          label: "Coming Soon",
+          variant: "outline",
+          color: "yellow-500",
+        },
+      ]}
     />
   );
 }

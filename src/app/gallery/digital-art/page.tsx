@@ -1,11 +1,27 @@
-import GalleryComingSoonLayout from "@/components/gallery/GalleryComingSoonLayout";
+"use client";
 
-export default function GalleryArtDigitalPage() {
+import GalleryComingSoonLayout from "@/components/gallery/GalleryComingSoonLayout";
+import { Palette, Sparkles } from "lucide-react";
+
+export default function ArtDigitalPage() {
   return (
     <GalleryComingSoonLayout
-      title="Digital Art Showcase"
-      description="Dive into a colorful world of digital paintings, generative art, and conceptual illustrations made with love and code."
-      expected="Early 2026"
+      title="Digital Art Gallery"
+      description="A collection of digital illustrations, conceptual artworks, and visual experiments exploring imagination through pixels and code."
+      expected="November 2025"
+      badges={[
+        {
+          icon: Palette,
+          label: "Digital Art",
+          variant: "secondary",
+        },
+        {
+          icon: Sparkles,
+          label: "Work in Progress",
+          variant: "outline",
+          color: "yellow-500",
+        },
+      ]}
     />
   );
 }

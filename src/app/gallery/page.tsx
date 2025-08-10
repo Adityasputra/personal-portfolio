@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { ButtonNav } from "@/components/custom/button";
 import { GalleryCard } from "@/components/gallery/GalleryCard";
@@ -22,6 +23,7 @@ const fadeInUp = {
 export default function GalleryPage() {
   return (
     <main className="max-w-7xl mx-auto px-4 py-12 space-y-16">
+      {/* Navigation */}
       <ButtonNav href="/home" />
 
       {/* Hero */}
@@ -37,7 +39,9 @@ export default function GalleryPage() {
             <Sparkles className="w-3 h-3 mr-1" />
             Creative Portfolio
           </Badge>
+
           <h1 className="text-4xl md:text-5xl font-bold">Visual Gallery</h1>
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Explore a curated collection of digital art, design work, and
             photography. Each piece represents a journey of creative exploration
@@ -46,7 +50,7 @@ export default function GalleryPage() {
         </motion.div>
       </section>
 
-      {/* Section header */}
+      {/* Section Header */}
       <motion.section
         initial="hidden"
         whileInView="visible"

@@ -1,8 +1,9 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 interface GalleryCardProps {
   title: string;
@@ -26,35 +27,43 @@ export function GalleryCard({
   featured = false,
 }: GalleryCardProps) {
   return (
-    <Card className="group transition-all hover:shadow-lg hover:-translate-y-1 h-full">
-      <CardContent className="p-0 flex flex-col h-full">
-        <div className={`${color} p-6 text-white relative`}>
-          <div className="absolute inset-0 bg-black/10" />
+    <Card className="group h-full bg-white transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-[#18181b]">
+      <CardContent className="flex h-full flex-col p-0">
+        {/* Header */}
+        <div
+          className={`${color} relative p-6 text-white dark:bg-gradient-to-br dark:from-[#23272f] dark:to-[#18181b]`}
+        >
+          <div className="absolute inset-0 bg-black/10 dark:bg-black/60" />
+
           <div className="relative z-10">
-            <div className="flex items-center justify-between mb-3">
-              <Icon className="w-8 h-8" />
+            <div className="mb-3 flex items-center justify-between">
+              <Icon className="h-8 w-8" />
+
               {featured && (
-                <Badge className="bg-white/20 text-white border-white/30">
+                <Badge className="bg-white/20 text-white border-white/30 dark:bg-primary dark:text-primary-foreground dark:border-primary/40">
                   Featured
                 </Badge>
               )}
             </div>
-            <h3 className="text-2xl font-bold mb-2">{title}</h3>
-            <p className="text-white/90 text-sm">{count}</p>
+
+            <h3 className="mb-2 text-2xl font-bold">{title}</h3>
+            <p className="text-sm text-white/90 dark:text-white/80">{count}</p>
           </div>
         </div>
 
-        <div className="flex flex-col justify-between flex-1 p-6">
+        {/* Body */}
+        <div className="flex flex-1 flex-col justify-between p-6">
           <div>
-            <p className="text-muted-foreground text-sm mb-3 line-clamp-3">
+            <p className="mb-3 line-clamp-3 text-sm text-muted-foreground dark:text-gray-300">
               {description}
             </p>
+
             <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <Badge
                   key={tag}
                   variant="secondary"
-                  className="text-xs whitespace-nowrap"
+                  className="whitespace-nowrap text-xs dark:bg-[#23272f] dark:text-gray-200"
                 >
                   {tag}
                 </Badge>
@@ -62,15 +71,16 @@ export function GalleryCard({
             </div>
           </div>
 
+          {/* CTA */}
           <div className="mt-6">
             <Button
               asChild
               variant="outline"
-              className="w-full hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="w-full transition-colors hover:bg-primary hover:text-primary-foreground dark:border-primary dark:bg-[#23272f] dark:text-gray-200 dark:hover:bg-primary dark:hover:text-primary-foreground"
             >
               <Link href={href}>
                 Explore Collection
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
