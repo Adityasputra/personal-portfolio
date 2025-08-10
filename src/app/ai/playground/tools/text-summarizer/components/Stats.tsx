@@ -106,7 +106,7 @@ export function Stats({ originalStats, summaryStats }: StatsProps) {
         </div>
       )}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
@@ -115,7 +115,7 @@ export function Stats({ originalStats, summaryStats }: StatsProps) {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:gap-6 gap-2">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
                   <Hash className="w-4 h-4 text-blue-600" />
@@ -211,7 +211,7 @@ export function Stats({ originalStats, summaryStats }: StatsProps) {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
                     <Hash className="w-4 h-4 text-blue-600" />

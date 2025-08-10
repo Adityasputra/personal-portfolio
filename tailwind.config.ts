@@ -54,6 +54,9 @@ const config: Config = {
         flicker: "flicker 3s infinite ease-in-out",
         float: "float 5s ease-in-out infinite",
       },
+      screens: {
+        xs: "475px",
+      },
     },
   },
   plugins: [

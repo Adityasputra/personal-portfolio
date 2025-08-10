@@ -6,21 +6,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   FileText,
   Sparkles,
-  Copy,
-  Download,
   RefreshCw,
   Clock,
-  BarChart3,
   Zap,
   AlertCircle,
 } from "lucide-react";
-import { Stats } from "./Stats";
 import { getStats, getSummary } from "./utils";
+import { SummaryTabs } from "./SummaryTabs";
+import { SummaryControls } from "./SummaryControls";
 
 type SummaryLength = "short" | "medium" | "detailed";
 type SummaryStyle = "bullet" | "paragraph" | "key-points";
@@ -148,55 +145,20 @@ export function Summarizer() {
         </CardHeader>
 
         <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Summary Length</label>
-              <div className="flex gap-2">
-                {(["short", "medium", "detailed"] as const).map((length) => (
-                  <Button
-                    key={length}
-                    variant={summaryLength === length ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSummaryLength(length)}
-                    disabled={isLoading}
-                  >
-                    {length.charAt(0).toUpperCase() + length.slice(1)}
-                  </Button>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Summary Style</label>
-              <div className="flex gap-2">
-                {(["paragraph", "bullet", "key-points"] as const).map(
-                  (style) => (
-                    <Button
-                      key={style}
-                      variant={summaryStyle === style ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setSummaryStyle(style)}
-                      disabled={isLoading}
-                    >
-                      {style === "bullet"
-                        ? "Bullets"
-                        : style === "key-points"
-                        ? "Key Points"
-                        : "Paragraph"}
-                    </Button>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
+          <SummaryControls
+            summaryLength={summaryLength}
+            summaryStyle={summaryStyle}
+            setSummaryLength={setSummaryLength}
+            setSummaryStyle={setSummaryStyle}
+          />
 
           <div className="space-y-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <label className="text-sm font-medium flex items-center gap-2">
                 <FileText className="w-4 h-4" />
                 Original Text
               </label>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
                 <span>{stats.characters} characters</span>
                 <span>{stats.words} words</span>
                 <span className="flex items-center gap-1">
@@ -260,113 +222,16 @@ export function Summarizer() {
             </Button>
           </div>
 
-          {summary && (
-            <Tabs defaultValue="summary" className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="summary">Summary</TabsTrigger>
-                <TabsTrigger value="stats">Statistics</TabsTrigger>
-                <TabsTrigger value="comparison">Comparison</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="summary" className="space-y-4">
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-lg">
-                        Generated Summary
-                      </CardTitle>
-                      <div className="flex gap-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => handleCopy(summary)}
-                        >
-                          <Copy className="w-4 h-4" />
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => handleDownload(summary, "summary.txt")}
-                        >
-                          <Download className="w-4 h-4" />
-                        </Button>
-                      </div>
-                    </div>
-                    <div className="flex gap-2">
-                      <Badge variant="secondary">{summaryStyle}</Badge>
-                      <Badge variant="outline">{summaryLength}</Badge>
-                      <Badge variant="outline">
-                        {getStats(summary).words} words
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="prose max-w-none">
-                      <div className="bg-muted/50 p-4 rounded-lg">
-                        {summaryStyle === "bullet" ? (
-                          <ul className="space-y-1">
-                            {summary
-                              .split("\n")
-                              .filter((line) => line.trim())
-                              .map((line, i) => (
-                                <li key={i}>
-                                  {line.replace(/^[•\-\*]\s*/, "")}
-                                </li>
-                              ))}
-                          </ul>
-                        ) : (
-                          <p className="whitespace-pre-wrap">{summary}</p>
-                        )}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="stats">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <BarChart3 className="w-4 h-4" />
-                      Text Analysis
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Stats
-                      originalStats={stats}
-                      summaryStats={getStats(summary)}
-                    />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="comparison">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-sm">Original Text</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-sm bg-muted/50 p-3 rounded max-h-[300px] overflow-y-auto">
-                        {text.slice(0, 500)}
-                        {text.length > 500 && "..."}
-                      </div>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-sm">Summary</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-sm bg-muted/50 p-3 rounded max-h-[300px] overflow-y-auto">
-                        {summary}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </TabsContent>
-            </Tabs>
-          )}
+          <SummaryTabs
+            summary={summary}
+            summaryStyle={summaryStyle}
+            summaryLength={summaryLength}
+            stats={stats}
+            text={text}
+            handleCopy={handleCopy}
+            handleDownload={handleDownload}
+            getStats={getStats}
+          />
 
           {history.length > 0 && (
             <Card>
@@ -378,11 +243,11 @@ export function Summarizer() {
                   {history.map((item) => (
                     <div
                       key={item.id}
-                      className="flex items-center justify-between p-3 bg-muted/50 rounded-lg hover:bg-muted cursor-pointer transition-colors"
+                      className="flex flex-col sm:flex-row sm:items-center justify-between p-3 bg-muted/50 rounded-lg hover:bg-muted cursor-pointer transition-colors gap-2"
                       onClick={() => loadFromHistory(item)}
                     >
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1">
+                        <div className="flex flex-wrap items-center gap-2 mb-1">
                           <Badge variant="outline" className="text-xs">
                             {item.style}
                           </Badge>
@@ -394,7 +259,7 @@ export function Summarizer() {
                           {item.originalText.slice(0, 80)}...
                         </p>
                       </div>
-                      <div className="text-xs text-muted-foreground ml-4">
+                      <div className="text-xs text-muted-foreground sm:ml-4">
                         {item.timestamp.toLocaleDateString()}
                       </div>
                     </div>
