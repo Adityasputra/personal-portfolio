@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Bell, Rocket, Clock } from "lucide-react";
+import { Bell, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
