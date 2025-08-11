@@ -10,6 +10,7 @@ import {
   Calendar,
   MapPin,
   ArrowUpRight,
+  Sparkles, // ✅ Add this import
 } from "lucide-react";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { motion, AnimatePresence } from "framer-motion";
@@ -30,6 +31,7 @@ import { cn } from "@/lib/utils";
 import { navigationItems } from "@/data/navbar/navigation-items";
 import ThemeToggle from "../ui/ThemeToggle";
 import Image from "next/image";
+import FeatureAnnouncement from "../FeatureAnnouncement";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -193,7 +195,7 @@ export function Navbar() {
             </NavigationMenu>
           </div>
 
-          {/* Right Side */}
+          {/* ✅ Updated Right Side */}
           <div className="flex items-center space-x-3">
             {/* Date */}
             <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 text-xs border border-border/50">
@@ -201,6 +203,11 @@ export function Navbar() {
               <span className="text-muted-foreground">
                 {formatDate(new Date())}
               </span>
+            </div>
+
+            {/* ✅ Feature Announcement - Desktop Only */}
+            <div className="hidden lg:block relative">
+              <FeatureAnnouncement />
             </div>
 
             {/* Theme Toggle */}
@@ -240,7 +247,7 @@ export function Navbar() {
                 className="w-[320px] sm:w-[400px] overflow-y-auto"
               >
                 <div className="flex flex-col space-y-6 mt-6">
-                  {/* Mobile Header */}
+                  {/* ✅ Updated Mobile Header */}
                   <div className="flex items-center justify-between">
                     <Link
                       href="/"
@@ -252,6 +259,9 @@ export function Navbar() {
                       </div>
                       <span>Adityasputra</span>
                     </Link>
+
+                    {/* ✅ Feature Announcement - Mobile */}
+                    <FeatureAnnouncement />
                   </div>
 
                   {/* Mobile Date */}
@@ -259,6 +269,36 @@ export function Navbar() {
                     <Calendar className="w-4 h-4 text-primary" />
                     <span>{formatDate(new Date())}</span>
                   </div>
+
+                  {/* ✅ Mobile Feature Banner */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl border border-primary/20"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <Sparkles className="w-4 h-4 text-primary" />
+                      <span className="text-sm font-medium">
+                        New: AI Playground
+                      </span>
+                      <Badge variant="secondary" className="text-xs">
+                        Live
+                      </Badge>
+                    </div>
+                    <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
+                      Try our new AI-powered tools for text, code, and creative
+                      writing.
+                    </p>
+                    <Button size="sm" className="w-full text-xs" asChild>
+                      <Link
+                        href="/ai-playground"
+                        onClick={handleMobileMenuClose}
+                      >
+                        <ArrowUpRight className="w-3 h-3 mr-1" />
+                        Explore Now
+                      </Link>
+                    </Button>
+                  </motion.div>
 
                   {/* Mobile Navigation */}
                   <nav className="flex flex-col space-y-2">
