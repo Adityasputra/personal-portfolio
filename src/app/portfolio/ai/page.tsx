@@ -6,7 +6,7 @@ import { Code, Rocket, Sparkles, Zap, Clock } from "lucide-react";
 export default function PortfolioAIPage() {
   return (
     <ComingSoonPortfolioLayout
-      title="Building Something Amazing"
+      title="AI Projects"
       description="I'm crafting an AI portfolio section that will showcase innovative projects, machine learning experiments, and cutting-edge AI solutions. Stay tuned for interactive demos and technical deep dives!"
       expected="September 2025"
       badges={[
